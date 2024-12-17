@@ -1,0 +1,253 @@
+.blue {
+    background: #3c31dd;
+  }
+
+  .red {
+    background: #dd3f31;
+  }
+
+  .pink {
+    background: #ff0066;
+    overflow: hidden;
+  }
+
+  .black {
+    background: #0f0f10;
+  }
+  .grey {
+    background: #44515c;
+  }
+  /* Curved bg with plain CSS */
+
+  .curve {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+  }
+
+  .curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    transform: translate(85%, 60%);
+    background-color: hsl(216, 21%, 16%);
+  }
+
+  .curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #44515c;
+    transform: translate(-4%, 40%);
+    z-index: -1;
+  }
+
+  /* Bubble bg with plain CSS */
+
+  .bubble::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: #0f0f10;
+    height: 85%;
+  }
+
+  /* Curved bg with SVG via https://www.shapedivider.app/ */
+
+  .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave svg {
+    position: relative;
+    display: block;
+    width: calc(103% + 1.3px);
+    height: 262px;
+  }
+
+  .wave .shape-fill {
+    fill: hsl(240, 3%, 6%);
+  }
+
+  /* SVG background image via https://haikei.app/ */
+
+  .spacer {
+    aspect-ratio: 960/80;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .con{
+    aspect-ratio: 960/80;
+    width: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .layer1 {
+    background-image: url('images/waves/darkwhite.svg');
+  }
+  .layer2 {
+    background-image: url('images/layer3.svg');
+  }
+
+  .flip {
+    transform: rotate(180deg);
+  }
+
+  /* Blobs SVG background image via https://haikei.app/ */
+
+  .blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: 0;
+  }
+
+  .blob-content {
+    z-index: 1;
+  }
+
+  .blobs {
+    width: 100%;
+    background: url('./blobs.svg') no-repeat bottom / cover;
+  }
+
+  .vc-image-1{
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+  .bg-blob-blog{
+    background-image: url('images/haikei/hiblog.svg');
+  }
+  @media screen and (max-width:1000px){
+    .bg-blob-blog{background-image: none;}
+  }
+  .work-in-progress{
+    border-style: solid;
+    border-color: #FFCCCB;
+  }
+  
+  .blob {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .blob, .image {
+    transition: all ease 1s;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .blob, .image {
+    transition-property: border-radius, transform;
+    transition-duration: 1s, 1s;
+  }
+  #image {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+    background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
+    background-position: center;
+    background-size: 340px auto;
+  }
+  @media screen and (max-width: 1000px) {
+    #image {position: relative;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+      background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
+      background-position: center;
+      background-size: 340px auto;}
+  }
+  .my-row{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+  }
+  .problem{
+    border-style: solid;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left-width: 10px;
+    border-color: rgb(255, 28, 28);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 15px;
+    background-color: rgb(255, 234, 241);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .remark{
+    border-style: solid;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left-width: 10px;
+    border-color: rgb(145, 162, 199);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 15px;
+    background-color: rgb(232, 244, 255);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+  }
+  .solution{
+    border-style: solid;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left-width: 10px;
+    border-color: rgb(0, 0, 0);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 15px;
+    background-color: rgb(239, 239, 239);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+  }
+  .wikitable {
+    background-color: #f8f9fa;
+    color: #202122;
+    margin: 1em 0;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}

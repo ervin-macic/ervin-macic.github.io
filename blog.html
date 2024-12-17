@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/images/mojaglavusina.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+    <script>
+      MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+  </head>
+  <body>
+     <!-- <script id="replace_with_navbar" src="nav.js"></script>  -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand text-white p-2" href="/index.html"><h2>Ervin Macić</h2></a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center">
+            <li class="nav-item px-3 justify-content-center">
+              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">About</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4 style="text-shadow: 1.5px 1.5px #50524f ">Blog</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/contact.html">
+                <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Contact</h4>
+              </a>
+            </li>
+            <!-- <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/ErvinMacic_CV.pdf" id="cv" target="_blank"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">CV</h4></a>
+            </li> -->
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Projects</h4></a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav> 
+    <div class="spacer layer1"></div>
+</button>
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+<div class="container col-xxl-10 px-4 py-2 shadow mt-3 mb-3 bg-blob-blog">
+    <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+      <div class="col-lg-6">
+       <img src="/images/waves/darkwaves.jpg" id="image" class="vc-image-1"> 
+     </div> 
+    <div class="col-lg-6 p-5">
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3" style="text-shadow: 1.5px 1.5px #7c7e7b "><em>A blog </em></h1>
+      <p class="lead m-3">I post something interesting here, monthly. <br> Something that I encounter or consider worth sharing, covering a range of mathematical and philosophical topics. </p>
+      <p class="lead m-3"></p>
+      <!-- <button class="btn btn-outline-dark py-2 hvr-forward m-3" type="button" id="tofacts">Weekly facts</button> -->
+    </div>
+  </div>
+</div>
+<main class="container p-4">
+      <!--  First row of floaties-->
+      <div class="row mb-2">
+        <div class="col-md-6 hvr-float d-flex align-items-stretch">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Probability & Pokémon</strong>
+              <h3 class="mb-0">Unexpected expected values </h3>
+              <div class="mb-1 text-muted">Apr 7, 2023</div>
+              <p class="mb-auto">Calculating some expected values and covering common sum techniques &#9889 
+              </p>
+              <a type="Submit" id="EV" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img src="/images/thumbnail/meowth_icon.jpg" height="300px">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 hvr-float d-flex align-items-stretch">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">A cute game </strong>
+              <h3 class="mb-0">Chip firing</h3>
+              <div class="mb-1 text-muted">Dec 27</div>
+              <p class="mb-auto">A game on graphs that is severely underrated. Having fun. 
+              </p>
+              <a type="Submit" class="stretched-link  text-danger">Work in progress</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img src="images/thumbnail/chipfiring.jpg" style="height: 300px;">
+            </div>
+          </div>
+        </div> -->
+        <div class="col-md-6 hvr-float d-flex align-items-stretch">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-warning"> Between H,I,O... </strong>
+              <h3 class="mb-0">Variable then fixed. </h3>
+              <div class="mb-1 text-muted">Feb 26, 2023</div>
+              <p class="mb-auto"> My favorite unusual geometry problems. I show a novel generalization of 5 seemingly distinct problems &#128516
+              </p>
+              <a type="Submit" id="hiooo" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block pt-3">
+              <img src="/images/thumbnail/hiorelation.jpg" height="250">
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- Second row of floaties -->
+  <div class="row mb-2 mt-2">
+    
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-dark"> More expectations</strong>
+          <h3 class="mb-0"> Birthday hashing </h3>
+          <div class="mb-1 text-muted">Jan 13, 2023</div>
+          <p class="card-text mb-auto"> Doing the math behind <strong>Hashing</strong> and covering the <strong>Birthday paradox</strong> &#10024  </p>
+          <a type="Submit" id="hashing" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/hash.jpg" height="300px" style="padding-right: 20px;">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-danger">Polynomials</strong>
+          <h3 class="mb-0">Projectile polynomials</h3>
+          <div class="mb-1 text-muted">Mar 17, 2022</div>
+          <p class="mb-auto">
+            A fun game I found about projectile motion. A lot of parabolas and an introduction to <strong>Lagrange Interpolation</strong> &#127812
+          </p>
+          <a type="Submit" id="mario" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/mario.jpg" height="300px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 3rd row of floaties -->
+  <div class="row mb-2">
+    <div class="col-md-6 d-flex align-items-stretch hvr-float">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
+          <h3 class="mb-0">Reflection on the IMO</h3>
+          <div class="mb-1 text-muted">Nov 12, 2021</div>
+          <p class="mb-auto">Discussing possibly the weirdest IMO ever. My experience during <strong>IMO 2021</strong> &#9997</p>
+          <a type="Submit" id="reflectimo" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="images/thumbnail/squirrels.jpg" height="300px">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-dark">Intermediate thinking</strong>
+          <h3 class="mb-0">Unusual continuity</h3>
+          <div class="mb-1 text-muted">Oct 15, 2021</div>
+            <p class="card-text mb-auto">Discussing continuity in mathematics. I cover some real analysis and applications in olympiad math. I attempt to balance a table &#128515</p>
+            <a type="Submit" id="intermediate" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/wobbly.jpg" height="300px">
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Fourth row of floaties -->
+   <div class="row mb-2 mt-2">
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">"On caring" by Nate Soars</strong>
+          <h3 class="mb-0">"On caring" review</h3>
+          <div class="mb-1 text-muted">Mar 17, 2022</div>
+          <p class="mb-auto">
+            Main takeaways I got from the post <strong>"On Caring"</strong> by Nate Soares &#127756
+          </p>
+          <a type="Submit" id="oncaring" class="stretched-link text-primary">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/oncaring.jpg" height="300px">
+        </div>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-danger"> Deep Learning</strong>
+          <h3 class="mb-0"> How fast is PyTorch?</h3>
+          <div class="mb-1 text-muted">June 9, 2023</div>
+          <p class="card-text mb-auto"> A post comparing the speed of DL development with and without frameworks like <code>PyTorch</code> &#128293 </p>
+          <a type="Submit" id="cowgazer" class="stretched-link text-danger">Work in progress</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/pytorch-logo.png" height="300px">
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Fifth row of floaties -->
+  <div class="row mb-2 mt-2">
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">FMHL</strong>
+          <h3 class="mb-0">Journalist rights</h3>
+          <div class="mb-1 text-muted">Mar 17, 2022</div>
+          <p class="mb-auto">
+            Walkthrough of a finished project keeping a database of infringements on journalist rights in Bosnia and Herzegovina 📰
+          </p>
+          <a type="Submit" id="probabilistic" class="stretched-link text-danger">Work in progress</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/fmhl-logo.svg" height="300px">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-danger"> Machine Learning</strong>
+          <h3 class="mb-0"> Cow Gazer</h3>
+          <div class="mb-1 text-muted">May 7, 2023</div>
+          <p class="card-text mb-auto"> Walkthrough of a project aimed at helping farmers in Bosnia keep track of their cows' movements, weight, and more
+            &#128004;
+          </p>
+          <a type="Submit" id="cowgazer" class="stretched-link text-danger">Work in progress</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/cow.jpg" height="300px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sixth row of floaties -->
+  <div class="row mb-2 mt-2">
+    <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">AI Safety</strong>
+          <h3 class="mb-0">Constitutional AI via debate</h3>
+          <div class="mb-1 text-muted">Aug 15, 2023</div>
+          <p class="mb-auto">
+            How can few-shot learning help align large "generalist" models with human values? 
+          </p>
+          <a type="Submit" id="CAVD" class="stretched-link text-danger">Work in progress</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/CAVD.png" height="300px">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-6 hvr-float d-flex align-items-stretch">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-danger"> Machine Learning</strong>
+          <h3 class="mb-0"> Cow Gazer</h3>
+          <div class="mb-1 text-muted">May 7, 2023</div>
+          <p class="card-text mb-auto"> Walkthrough of a computer vision project that uses ML for cattle recognition and helps local farmers.</p>
+          <a type="Submit" id="cowgazer" class="stretched-link text-danger">Work in progress</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/thumbnail/cow.jpg" height="300px">
+        </div>
+      </div>
+    </div> -->
+  </div>
+  
+  
+  
+</main>
+
+    <script src="blog.js"></script>
+    <script src="index.js"></script>
+
+    <div class="spacer whiteblack"></div>
+
+   <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+            ideas and talking with smart people, so by all means, please do! Besides that, check in often to see the blog post and/or projects.  </p>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; All Rights Reserved by 
+       <a href="#">Ervin Macić</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>  
