@@ -1,11 +1,11 @@
-document.getElementById("GoHome").onclick=function(){
-    location.href="/index.html";
+document.getElementById("about").onclick=function(){
+    location.href="/about/";
   };
   document.getElementById("blog").onclick=function(){
-    location.href="/blog.html";
+    location.href="/blog/";
   };
   document.getElementById("project").onclick=function(){
-    location.href="/projects.html";
+    location.href="/projects/";
   };
   document.getElementById("tofacts").onclick=function(){
     location.href="/facts.html";
