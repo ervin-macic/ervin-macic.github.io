@@ -1,24 +1,24 @@
 document.getElementById("intermediate").onclick=function(){
-  location.href="/blogentries/discretecont.html";
+  location.href="blog/blogentries/discretecont.html";
 };
 document.getElementById("EV").onclick=function(){
-  location.href="/blogentries/expectedvalue.html";
+  location.href="blog/blogentries/expectedvalue.html";
 };
 
 document.getElementById("reflectimo").onclick=function(){
-  location.href="/blogentries/reflectonimo.html";
+  location.href="blog/blogentries/reflectonimo.html";
 };
 document.getElementById("hiooo").onclick=function(){
-  location.href="/blogentries/fixedpoints.html";
+  location.href="blog/blogentries/fixedpoints.html";
 }
 document.getElementById("mario").onclick=function(){
-  location.href="/blogentries/projectilemotion.html";
+  location.href="blog/blogentries/projectilemotion.html";
 }
 document.getElementById("hashing").onclick=function(){
-  location.href="/blogentries/hashing.html";
+  location.href="blog/blogentries/hashing.html";
 }
 document.getElementById("oncaring").onclick=function(){
-  location.href="/blogentries/oncaring.html";
+  location.href="blog/blogentries/oncaring.html";
 }
 // document.getElementById("cowgazer").onclick=function(){
 //   location.href="/blogentries/cowgazer.html";
