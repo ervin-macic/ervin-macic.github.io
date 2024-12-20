@@ -53,9 +53,13 @@
       .whitepurple {
         background-image: url('/images/waves/whitepurple.svg')
       }
-      .whitedarke{
+      /*.whitedarke{
         background-image: url('/images/whitedarke.svg')
+      }*/
+      .whitedarke{
+        background-image: url('/images/waves/darkeblackwhite.svg');
       }
+
       .whiteblack{
         background-image: url('/images/waves/whiteblack.svg')
       }
@@ -63,7 +67,7 @@
         background-image: url('/images/haikei/darkeblack.svg')
       }
       .purplewhite {
-        background-image: url('/images/waves/purplewhite1.svg');
+        background-image: url('/images/waves/purplewhite.svg');
       }
     
       .flip {

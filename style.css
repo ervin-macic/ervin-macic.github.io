@@ -9,6 +9,9 @@ h1, h2, h3, .nav-items {
 body, p {
   font-family: 'Inter', sans-serif;
 }
+
+/* random things */
+
 #home{
   background-color: #f7f7f7;
 }
@@ -87,9 +90,6 @@ hr.thick {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  }
-  .whitedarke{
-    background-image: url('/images/haikei/darkeblackwhite.svg')
   }
   .centered {
     position: absolute;
