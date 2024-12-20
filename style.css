@@ -1,6 +1,13 @@
-body{
-  font-family: "Sora", sans-serif;
-  
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Set up font hierarchy */
+h1, h2, h3, .nav-items {
+  font-family: 'Sora', sans-serif;
+}
+
+body, p {
+  font-family: 'Inter', sans-serif;
 }
 #home{
   background-color: #f7f7f7;
@@ -51,10 +58,15 @@ hr.thick {
     -ms-filter:"alpha(opacity=100)";
 }
 
-  .bg-rot{
+/* Background colours */
+
+  .bg-bordeau{
     background-color: #993233;
   }
-  .rote{
+  .bg-purple{
+    background-color: #726bc6;
+  }
+  .bordeau{
       color: #993233
   }
   .darke{
@@ -66,6 +78,9 @@ hr.thick {
   .black-abs{
     background-color: #000000;
   }
+
+  /* Wave-adjacent styling */
+
   .spacer {
     aspect-ratio: 960/80;
     width: 100%;
@@ -89,6 +104,9 @@ hr.thick {
   #hero{
     background-color: white;
   }
+
+  /* Don't display the wave on smaller devices */
+  
   @media only screen and (max-width: 1000px) {
     #red-white {
         display: none;

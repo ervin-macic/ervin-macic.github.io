@@ -1,24 +1,4 @@
-document.getElementById("about").onclick=function(){
-    location.href="/about/";
-  };
-  document.getElementById("blog").onclick=function(){
-    location.href="/blog/";
-  };
-  document.getElementById("project").onclick=function(){
-    location.href="/projects/";
-  };
-  document.getElementById("tofacts").onclick=function(){
-    location.href="/facts.html";
-  };
-  document.getElementById("reflectimo").onclick=function(){
-    location.href="/blogentries/reflectonimo.html";
-  };
-    document.getElementById("homeblog").onclick=function(){
-    location.href="/blog.html";
-  };
-  document.getElementById("cv").onclick=function(){
-    location.href="/ErvinMacicCV.pdf";
-  };
+
   document.getElementById("disc").onclick=function(){
     location.href="https://discordapp.com/users/210412821643526144/";
   };
