@@ -69,7 +69,12 @@
       .purplewhite {
         background-image: url('/images/waves/purplewhite.svg');
       }
-    
+      .homedarkwhite {
+        background-image: url('/images/waves/homedarkwhite.svg')
+      }
+      .aboutwhitedark {
+        background-image: url('/images/waves/aboutwhitedark.svg')
+      }
       .flip {
         transform: rotate(180deg);
       }
