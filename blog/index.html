@@ -40,15 +40,16 @@
             <li class="nav-item px-3">
               <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4 style="text-shadow: 1.5px 1.5px #50524f">Blog</h4></a>
             </li>
-            <li class="nav-item px-3">
+            <!-- <li class="nav-item px-3">
               <a class="nav-link text-white hvr-underline-reveal" id="#" href="/projects/"><h4 style="text-shadow: 1.5px 1.5px #50524f">Projects</h4></a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="spacer layer1"></div>
+    <div id="red-white" class="placeholder homedarkwhite"></div>
+    <!-- <div class="spacer layer1"></div> -->
     <a href="#" id="scroll" style="display: none;"><span></span></a>
 
     <div class="container col-xxl-10 px-4 py-2 shadow mt-3 mb-3 bg-blob-blog">
@@ -57,14 +58,45 @@
           <img src="/images/waves/darkwaves.jpg" id="image" class="vc-image-1">
         </div>
         <div class="col-lg-6 p-5">
-          <h1 class="display-5 fw-bold lh-1 mb-2 m-3" style="text-shadow: 1.5px 1.5px #7c7e7b"><em>My blog</em></h1>
-          <p class="lead m-3">I write something interesting here, every so often.<br> So far, there are some posts about math-adjacent things, philosophy, 
-            general life things, and more. </p>
+          <h1 class="display-5 fw-bold lh-1 mb-2 m-3" style="text-shadow: 1.5px 1.5px #7c7e7b">Blog</h1>
+          <p class="lead m-3">I write something here, every so often.<br> So far, there are some posts about math-adjacent and general life things. </p>
         </div>
       </div>
     </div>
 
     <main class="container p-4">
+      <div class="row mb-2">
+        <div class="col-md-6 hvr-float d-flex align-items-stretch">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Are famous universitites really that good?</strong>
+              <h3 class="mb-0">Oxford vs ETF Sarajevo</h3>
+              <div class="mb-1 text-muted">Apr 7, 2023</div>
+              <p class="mb-auto">A comparison of studying at Oxford and at ETF Sarajevo &#127891;</p>
+              <a type="Submit" href="blog_entries/oxford_vs_etf/" id="oxford_vs_etf" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img src="/images/thumbnail/oxford_vs_etf.png" height="300">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 hvr-float d-flex align-items-stretch">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-warning">Between H,I,O...</strong>
+              <h3 class="mb-0">Variable then fixed.</h3>
+              <div class="mb-1 text-muted">Feb 26, 2023</div>
+              <p class="mb-auto">I show a common generalization of 5 seemingly unrelated problems in euclidean geometry &#128208;</p>
+              <a type="Submit" href="blog_entries/fixed_point/" id="hiooo" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block pt-3">
+              <img src="/images/thumbnail/hiorelation.jpg" height="250">
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row mb-2">
         <div class="col-md-6 hvr-float d-flex align-items-stretch">
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -136,7 +168,7 @@
               <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
               <h3 class="mb-0">Reflection on the IMO</h3>
               <div class="mb-1 text-muted">Nov 12, 2021</div>
-              <p class="mb-auto">Discussing possibly the weirdest IMO ever. My experience during <strong>IMO 2021</strong> &#9997;</p>
+              <p class="mb-auto">Possibly the weirdest IMO ever. My experience during <strong>IMO 2021</strong> &#9997;</p>
               <a type="Submit" href="blog_entries/reflection_on_IMO/" id="reflectimo" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -177,7 +209,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 hvr-float d-flex align-items-stretch">
+        <!-- <div class="col-md-6 hvr-float d-flex align-items-stretch">
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <strong class="d-inline-block mb-2 text-danger">Deep Learning</strong>
@@ -240,7 +272,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
 
     <div class="spacer whiteblack"></div>
@@ -250,7 +282,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h4>About</h4>
-            <p class="text-justify">For communication and inquiries, refer to the <a>Contact</a> page.</p>
+            <p class="text-justify">For communication refer to the <a>Contact</a> page.</p>
           </div>
         </div>
         <hr>
@@ -258,7 +290,6 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; All Rights Reserved by <a href="#">Ervin Macić</a>.</p>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">

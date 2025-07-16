@@ -103,6 +103,18 @@
     background-size: cover;
   }
 
+  .placeholder {
+        aspect-ratio: 960/60;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      
+  .homedarkwhite {
+        background-image: url('/images/waves/homedarkwhite.svg')
+      }
+
   .layer1 {
     background-image: url('../images/waves/darkwhite.svg');
   }
