@@ -53,7 +53,7 @@
         </div>
       </div>
     </nav>
-    <div class="spacer layer1"></div> 
+    <div class="placeholder dark-white"></div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
@@ -62,8 +62,8 @@
       </div> 
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Birthday hashing</em></h1>
-      <p class="lead mb-2 m-3">Here I will discuss more applications of statistics and expected values with a technique in the center of computer science called <b>hashing.</b></p>
-      <p class="lead mb-2 m-3"> The key principles relate closely to the birthday paradox which I'll cover here. </p>
+      <p class="lead mb-2 m-3">I discuss more applications of expected values with a technique in the center of computer science called <b>hashing.</b></p>
+      <p class="lead mb-2 m-3"> The key principles relate closely to the birthday paradox which I'll also cover. </p>
     </div>
   </div>
 </div>
@@ -78,18 +78,25 @@
         <h2 class="blog-post-title"> Birthday hashing</h2>
         <p class="blog-post-meta">January 14, 2023</p>
         <p>
+          <p>
           A hash table is a commonly used data structure in computer science. It is one of the most useful data structures because of its speed in information retrieval. For 
-          example, suppose we want to store peoples' addresses. For each person we store their ID as the key and address as the value. An ID
-           could be a person's name or something similar. With proper notation, if $x$ is the ID 
-          of a person then $h(x)$ is the address. Nothing too special, just a function. However, problems arise if by chance two people have the same ID or the same address. 
-          Trouble starts when we attempt to store more than one item in the same slot. The efficiency of all hashing algorithms depends on how often this happens. <br> <br>
-          The hash function $h$ is deterministic. Every time you look up the address of an ID you get the same thing back each time. 
+          example, suppose we want to store peoples' addresses. For each person we are tasked to store their name as the key and home address as the value. 
+          With proper notation, if $x$ is the name 
+          of a person then $h(x)$ is the index at which the home address can be found (if the hash table is implemented using an array). 
+          Nothing too special, just a function. However, problems arise if by chance two people have the same name or hash to the same index (so $x=y$ causes $h(x)=h(y)$). 
+          Trouble starts when we attempt to store more than one "item" in the same "slot". The efficiency of all hashing algorithms depends on how often this happens. There are two 
+          common ways of hashing, either <b>linear probing</b> or <b>chaining</b> using linked lists. 
+          When using an array of linked lists, once we want to recall a person's address, we hash their name (apply $h$ to $x$) to get the index in the hash table and if there are multiple names that hash to the same key,
+          we have to check each one of them until we find the right one, traversing the linked lists from left to right giving $\mathcal{O}(\ell)$ where $\ell$ is the length of the linked list. 
+          This is called a <b>collision</b>.
+          Here is a really, really good video explaining the difference between linear probing and chaining: <a href="https://www.youtube.com/watch?v=KyUTuwz_b7Q" target="_blank">Hash Tables and Hash Functions</a></p>
+          <p>The hash function $h$ is deterministic. Every time you look up the index of a name you get the same thing back each time. </p>
           <div class="px-5 pt-2 my-3 text-center">
             <img src="/images/thumbnail/hash.jpg" style=" width: 100%; height: auto; max-width: 400px;">
           </div>
         </p> 
         <p>
-          To showcase the problem with hashing, I'll start with a very similar problem. I mentioned it in a previous post here: <a target="_blank" href="https://frequentervin.github.io/blogentries/expectedvalue.html">Unexpected expected values</a>. The question is simple (assume no person is born on February 29th):
+          To showcase the problem with hashing, I'll start with a very similar problem. I mentioned it in a previous post here: <a target="_blank" href="https://frequentervin.github.io/blogentries/expectedvalue.html">Expected values</a>. The question is simple (assume no person is born on February 29th):
           <div class="problem">
             <h5><b>Birthday paradox</b></h5>
             <p>In a set of $23$ people the probability that two share the same birthday is greater than $0.5$ (or $50$%).</p>
@@ -98,14 +105,14 @@
           But think about the contrapositive statement. Imagine adding people in such a way that 
           no two have the same birthday. Assume each day is equally likely to be a person's birthday so:
           \[ \mathbb{P}(\textnormal{person $i$ is born on day $j$}) = 1/365\]
-          Trying to calculate the probability that in a set of $n$ birthdays no two are equal is (for $n=3$):
+          Trying to calculate the probability that in a set of $n$ birthdays no two are equal gives (for $n=3$):
           \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365}\]
-          In general for $k=365$ and $n=n$ we have:
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k}{k} \cdot \frac{k-1}{k} \ldots \frac{k-n+1}{k} \]</div>
-          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k!}{k^n \cdot (k-n)!} \]
-          Now our probability that two have the same birthday for $n$ people and $k$ days is:
+          This is just the chain rule in probability with independent events. In general for $k=365$ and $n=N$ we have:
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k}{k} \cdot \frac{k-1}{k} \ldots \frac{k-N+1}{k} \]</div>
+          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k!}{k^N \cdot (k-N)!} \]
+          Now our probability that two have the same birthday for $N$ people and $k$ days is:
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \mathbb{P}(\textnormal{no two equal birthday}) \]</div>
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \frac{k!}{k^n \cdot (k-n)!}\]</div>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \frac{k!}{k^N \cdot (k-N)!}\]</div>
           <div class="px-5 pt-2 my-3 text-center">
             <img src="http://www.edscave.com/images/P_SharedBirthday.png" style=" width: 100%; height: auto; max-width: 600px;">
           </div>

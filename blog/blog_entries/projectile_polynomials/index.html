@@ -52,7 +52,7 @@
         </div>
       </div>
     </nav>
-    <div class="spacer layer1"></div> 
+    <div class="placeholder dark-white"></div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
@@ -86,30 +86,30 @@
         <p class="blog-post-meta">Mar 17, 2022</p>
         <p> A brief overview of projectile motion: </p>
         <div class="px-5 pt-2 my-2 text-center">
-            <img src="/images/blog/Inclinedthrow.gif" style=" width: 100%; height: auto; max-width: 600px;">
+            <img src="/images/blog/projectile_polynomials/Inclinedthrow.gif" style=" width: 100%; height: auto; max-width: 600px;">
           <h1 class="display-4 fw-bold"></h1>
         </div>
           <p>
-            <b>Assume:</b> the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
+            <b>Assumptions:</b> the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
             <br><br>
-            <b>Start: </b>Let the object be flung into the air at an angle $\theta$ with initial speed $u$. Gravity acts on our body perpendicularly to the surface of the Earth so our object will be
-            affected in the vertical $y$ direction. Let our vertical velocity at time $t$ be $v_{y}^{(t)}$ and let our horizontal velocity be $v_{x}^{(t)}$. <br> <br> Notice that
-            since nothing exerts force on our body in the $x$ direction our horizontal velocity stays the same so $v_{x}^{(t)} = v_{x}^{(0)}$ for all $t$. <br><br>
-            Our vertical velocity is trickier since we have to account for the deacceleration $g=9.81 m/s^2$ in the vertical direction, thus our vertical velocity
+            <b>Start: </b>Shoot the object into the air at an angle $\theta$ with initial speed $u$. Gravity acts on the body perpendicularly to the surface of the Earth so our object will be
+            affected in the vertical $y$ direction. Let the vertical velocity at time $t$ be $v_{y}^{(t)}$ and let the horizontal velocity be $v_{x}^{(t)}$. <br> <br> Notice that
+            since nothing exerts force on the body in the $x$ direction the horizontal velocity stays the same so $v_{x}^{(t)} = v_{x}^{(0)}$ for all $t$. <br><br>
+            The vertical velocity is trickier since we have to account for the deacceleration $g=9.81 m/s^2$ in the vertical direction, thus the vertical velocity
             at time $t$ is $v_{y}^{(t)} = v_{y}^{(0)}\cdot t - g\cdot t$.
-            <br>Our displacement in the $x$ direction is just equal to $s_{x}^{(t)} = v_{x}^{(t)} \cdot t$ since this is
+            <br>The displacement in the $x$ direction is just equal to $s_{x}^{(t)} = v_{x}^{(t)} \cdot t$ since this is
             motion without acceleration. We know that $v_{x}^{t} = v_{x}^{0} = u \cos(\theta)$ so $s_x^{(t)} = u \cdot t\cos(\theta)$. Denote $x_t=s_x^{(t)}$ and $y_t=s_y^{(t)}$<br>
             <br>
             <div class="px-5 pt-2 my-2 text-center">
-              <img src="/images/blog/projectilemotion.png" style=" width: 100%; height: auto; max-width: 600px;">
+              <img src="/images/blog/projectile_polynomials/projectilemotion.png" style=" width: 100%; height: auto; max-width: 600px;">
               <br>
               <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4"> Velocities in the $x$ and $y$ directions </p>
               </div>
           </div>
           <br>
-            Our $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$ or $y_t = u \sin(\theta)t - \frac{g\cdot t^2}{2}$.<br><br>
-            Now to figure out the equation of our trajectory with $x$ input and $y$ output we need to get $y_t$ in terms of $x_t$. After rearranging equations and boring algebra we get the following: <br>
+            The $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$ or $y_t = u \sin(\theta)t - \frac{g\cdot t^2}{2}$.<br><br>
+            Now to figure out the equation of the trajectory with $x$ input and $y$ output we need to get $y_t$ in terms of $x_t$. After rearranging equations and boring algebra we get the following: <br>
             <div style="overflow-x:auto; overflow-y: hidden">\[ y = \left (-\frac{g}{2u^2\cos(\theta)} \right )x^2 + (\tan(\theta))x = (\ldots)x^2+(\ldots)x \]</div>
             The above "$\ldots$" represent constants. I also omitted $t$ in the index of $x,y$.
           </p>
@@ -121,14 +121,14 @@
             $\star$ Projectile motion is a combination of a vertical shot and a horizontal uniform straight line movement. $\star$
           </p>
           <div class="px-5 pt-2 my-2 text-center">
-            <img src="/images/blog/monkeybranch.png" style=" width: 100%; height: auto; max-width: 400px;">
+            <img src="/images/blog/projectile_polynomials/monkeybranch.png" style=" width: 100%; height: auto; max-width: 400px;">
               <h1 class="display-4 fw-bold"></h1>
               <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4"> Problem from physics book that showcases this idea. </p>
+                <p class="lead mb-4"> The chimp and the hunter </p>
               </div>
           </div>
-          <p>The chimp will sadly not survive &#128532. In the $y$ direction the bullet is in free-fall essentially, just like the chimp, and they start
-            falling at the same time.
+          <p>The chimp will not survive &#128532. In the $y$ direction the bullet is in free fall, just like the chimp, and they start
+            falling at the same time from the same height.
             <br>
             <br>
             A free fall/vertical shot can be thought of as an infinitely narrow parabola or whenever an object is flying through the air it keeps this parabolic shape (without air resistance).
@@ -137,37 +137,37 @@
           <hr>
           <h3>Back to Mario</h3>
           <p>
-            Now that we know that every throw traces a parabola, we are ready to tackle the Mario game. Could you make an impossible level in this game?
+            Now that we know that every trajectory traces a parabola, we are ready to tackle the Mario game. Could you make an impossible level in this game?
             Could you place the coins in such a way that no Mario's jump can catch them all? <br>
             
-            <b>If you're given some coins, how can you determine the jump without try and fail?</b> <br> <br>
-            Mathematically said, given $n$ points, does there exist a parabola that fits through all of these points? It should be obvious that the answer
-            is yes. Place three collinear points parallel to the ground and you can't fit any parabola. Or even easier, place two vertical points. By definition
+            <b>If you're given some coins, how can you determine the jump without trial and error?</b> <br> <br>
+            Mathematically said, given $n$ points, does there exist a parabola that fits through all $n$ of these points? It should be obvious that the answer
+            is no for general $n$. Place three collinear points parallel to the ground and you can't fit any (non-degenerate) parabola. Or even easier, place two vertical points. By definition
             of a function they can't both lie on the graph.<br> <br>
             <b>The actual probability of making a possible level with three or more coins is $0$.</b> <br>
-            But it is obviously possible. Just work backwards from the parabola itself and mark however many points you want.<br>
+            But it is obviously (sometimes) possible. Just work backwards from the parabola itself and mark however many points you want.<br>
             The problem of finding a graph to <b>fit</b> a set of points is called an <b>interpolation problem.</b> Interpolating means finding a function that fits
             the given data points. There are <a target="_blank" href="https://en.wikipedia.org/wiki/Interpolation">many techniques of interpolation</a>, but I'll stick 
-            with <b>Lagrange interpolation</b> because it is one of the most fundamental ones and related to olympiad mathematics.
+            with <b>Lagrange interpolation</b> because it is one of the most fundamental ones and somewhat useful for math olympiads.
           </p>
           <p class="lead">
             $\star$ The Lagrange interpolating polynomial is the unique polynomial of lowest degree that interpolates a given set of data. Given a data set of coordinate pairs
             $(x_i,y_i)$ with $0 \leq i \leq k$, the Lagrange polynomial $L(x)$ has degree $\leq k$ and assumes each value at the corresponding input $L(x_i) = y_i$.  $\star$
           </p>
           <p>
-            Note that fitting polynomials ends up just being $n$ equations with $n$ variables. If we have $n$ points to fit to a polynomial of degree $n$ there are
-            infinitely many such polynomials. If we have $n+1$ points, then there exists exactly one polynomial of degree $n$ (or none depending if we take the restriction that $x_i$ are sorted).
+            Note that fitting polynomials is the same as solving a system of $n$ equations with $n$ variables. If we have $n$ points to fit to a polynomial of degree $n$ there are
+            infinitely many such polynomials. If we have $n+1$ points, then there exists exactly one polynomial of degree $n$ (or none if we don't take the sensible restriction that $x_i$ are distinct).
             Obviously, the Lagrange polynomial can have degree less than $n$ if the given points lie on a curve of smaller degree.
             <br>
             <div class="px-5 pt-2 my-2 text-center">
-              <img src="/images/blog/lagrange.jpg" style=" width: 100%; height: auto; max-width: 600px;">
+              <img src="/images/blog/projectile_polynomials/lagrange.jpg" style=" width: 100%; height: auto; max-width: 600px;">
                 <h1 class="display-4 fw-bold"></h1>
                 <div class="col-lg-6 mx-auto">
                   <p class="lead mb-4"> Polynomial tracing points of a function.</p>
                 </div>
             </div>
             It turns out that this polynomial is relatively easy to find. <br>
-            For simplicity I'll solve it for $n=3$. We want to find the parabola that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
+            For simplicity I'll find it for $n=3$. We want to find the parabola that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
             The simplest way to achieve such a quadratic is if it looked something like this:
             <div style="overflow-x: auto; overflow-y: hidden">\[ p(x) = y_0 \cdot A + y_1 \cdot B + y_2 \cdot C \]</div>
             where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials and at least one should have 
@@ -178,15 +178,15 @@
             <br> Here's an example of a fitted parabola to three points (thanks to the SciPy library we have an inbuilt function): <br> <br>
             <script src="https://gist.github.com/FrequentErvin/0e83419db101c81edbf04392f6a11687.js"></script>
             <div class="px-5 pt-2 my-2 text-center">
-              <img src="/images/blog/lagrangeparabola.png" style=" width: 100%; height: auto; max-width: 600px;">
+              <img src="/images/blog/projectile_polynomials/lagrangeparabola.png" style=" width: 100%; height: auto; max-width: 600px;">
             </div>
-            The general polynomial for $n$ points is analogous and should really be written with brackets:
+            The general polynomial for $n$ points is analogous:
             <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = \sum_{i=0}^{n} \left ( y_i \frac{(x-x_0) \cdots (x-x_{i-1}) (x-x_{i+1}) \cdots (x-x_n)}{(x_i-x_0) \cdots (x_i-x_{i-1}) (x_i - x_{i+1}) \cdots (x_i - x_n)} \right )\]</div>
             Note the missing $x_i$ in the numerator and denominator. Also make sure that this polynomial is of degree $n$ indeed and that we are fitting $n+1$ points starting from index $0$.
 
             <br>
             <br>
-            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. Another kind of interpolation is the <a target="_blank" href="https://en.wikipedia.org/wiki/Newton_polynomial">Newton Interpolation.</a> This kind of polynomial can be very useful in general and even serve as a relatively naive 
+            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points (assuming $x_i \neq x_j$). Another kind of interpolation is the <a target="_blank" href="https://en.wikipedia.org/wiki/Newton_polynomial">Newton Interpolation.</a> This kind of polynomial can be very useful in general and even serve as a relatively naive 
             technique in data science where predicting outputs given inputs is crucial. <br> <br> 
             For example, it is often better than <b>Linear Interpolation</b> and <b>Nearest Neighbors Interpolation</b>
              since it avoids any jaggedness by its polynomial nature. It does have its problems though. It is usually not useful for large sets of data points since it usually sky-rockets into 
@@ -194,7 +194,7 @@
              <br> <br>
              <script src="https://gist.github.com/FrequentErvin/e03ca8dc62af9923f4bc02b5b78f2f8b.js"></script>
              <div class="px-5 pt-2 my-2 text-center">
-              <img src="/images/blog/phenomenom.png" style=" width: 100%; height: auto; max-width: 600px;">
+              <img src="/images/blog/projectile_polynomials/phenomenom.png" style=" width: 100%; height: auto; max-width: 600px;">
             </div>
             <br> <br>
             <p>
@@ -202,18 +202,18 @@
               interpolating the function $f(x) = \frac 1{1+25x^2}$ at points $x_i = \frac{2i}{n}-1$: 
               <script src="https://gist.github.com/FrequentErvin/948614c4fad3a85c045b8ce194060253.js"></script>
               <div class="px-5 pt-2 my-2 text-center">
-                <img src="/images/blog/zoomedInLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
+                <img src="/images/blog/projectile_polynomials/zoomedInLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
               </div>
               <div class="px-5 pt-2 my-2 text-center">
-                <img src="/images/blog/zoomedOutLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
+                <img src="/images/blog/projectile_polynomials/zoomedOutLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
               </div> <br> <br>
-              To avoid this in data science we use cubic splines which mimic a smooth polynomial passing through our points. You sort your datapoints by 
+              To avoid this in we could use cubic splines which mimic a smooth polynomial passing through our points. You sort your datapoints by 
               their $x$ values and go left to right and fit each two consecutive points with a (typically) cubic curve. We use cubics because we need to be 
               able to have the same slopes (derivatives) at the ends of the intervals in order for the transition to be smooth. You can check that parabolas
               wouldn't suffice there. So at the end we have smooth connections between points: <br> <br>
               <script src="https://gist.github.com/FrequentErvin/f8bd9f30b9f7b48d49974d21f4397486.js"></script>
               <div class="px-5 pt-2 my-2 text-center">
-                <img src="/images/blog/cubicSpline.png" style=" width: 100%; height: auto; max-width: 600px;">
+                <img src="/images/blog/projectile_polynomials/cubicSpline.png" style=" width: 100%; height: auto; max-width: 600px;">
               </div>
               <br> <br>
               Now notice the smoothness of the transitions. This is thanks to the equal derivatives. We have basically made a graph out of $n$ different smaller
@@ -226,7 +226,7 @@
             <br>
             \[ \]
             <hr>
-            <h3>Olympiad problems</h3> <br>
+            <h3>Practice problems</h3> <br>
             <h4 class="text-primary">Introductory</h4>
             <dl>
               <dt>Problem 1</dt>

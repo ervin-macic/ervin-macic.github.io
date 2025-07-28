@@ -52,7 +52,7 @@
         </div>
       </div>
     </nav>
-    <div class="spacer layer1"></div>
+    <div class="placeholder dark-white"></div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-xxl-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
@@ -60,8 +60,8 @@
         <img src="/images/thumbnail/squirrels.jpg" id="imagey" class="vc-image-1"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3" style="text-shadow: 1.5px 1.5px #7e7b7b "><em>A reflection on the IMO 2021</em></h1>
-      <p class="lead mb-2 m-3">Here I've laid out my experiences during the competition and displayed my train-of-thought while solving the problems. This was the 62.  <b>IMO</b> held online in Saint Petersburg.</p>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3" style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Reflection on the IMO 2021</em></h1>
+      <p class="lead mb-2 m-3">I talk about out my experience during the competition and my thoughts while solving the problems. This was the 62nd  <b>IMO</b> held online from Saint Petersburg.</p>
       <!-- <button class="btn btn-outline-dark p-2 mb-2 m-3" type="button" id="tofacts">IMO 2021 - Problems</button> -->
     </div>
   </div>
@@ -76,15 +76,16 @@
       <article class="blog-post">
         <h2 class="blog-post-title" id="imo_2021">Reflection on the IMO</h2>
         <p class="blog-post-meta">November 12, 2021</p>
-        <p> This year's IMO was weird.. Sadly it was online again.</p>
-          <p>I've learned one lesson through it. To solve most* IMO P1/P4 I ask myself two questions: What is <strong>enough</strong> to finish?  What would be helpful if it were true?</p>
+        <p> This year's IMO was weird.. Sadly it was online due to Covid.</p>
+          <p>I learned one lesson through it. To solve most* IMO P1/P4 questions I should ask myself two questions: What is <strong>enough</strong> to finish?  What would be helpful if it were true?</p>
         <p> I will be discussing only P1,P4 and P5 since those are the ones I tried the most on the competition. </p>
+        <h4>Some statistics</h4>
         <table class="table">
           <thead>
             <tr>
               <th>Problem No.</th>
-              <th>Mean P#</th>
-              <th>Num (P# = 7)</th>
+              <th>Mean Points</th>
+              <th>Number of full solves (7/7)</th>
             </tr>
           </thead>
           <tbody>
@@ -105,13 +106,13 @@
             </tr>
           </tbody>
         </table>
-        <p>By the above data, it seems that this year's P1,P4,P5 weren't as easy as say 2019: </p>
+        <p>By the above data, it seems that this year's P1, P4, P5 weren't as easy as say 2019: </p>
         <table class="table">
           <thead>
             <tr>
               <th>Problem No.</th>
-              <th>Mean P#</th>
-              <th>Num (P# = 7)</th>
+              <th>Mean Points</th>
+              <th>Number of full solves (7/7)</th>
             </tr>
           </thead>
           <tbody>
@@ -132,13 +133,13 @@
             </tr>
           </tbody>
         </table>
-        Even more striking are the mean and perfect scores on P1 and P4 in 2014 for example:
+        Even more striking are the mean and full solves on P1 and P4 in 2014 for example:
         <table class="table">
           <thead>
             <tr>
               <th>Problem No.</th>
-              <th>Mean P#</th>
-              <th>Num (P# = 7)</th>
+              <th>Mean Points</th>
+              <th>Number of full solves (7/7)</th>
             </tr>
           </thead>
           <tbody>
@@ -169,7 +170,7 @@
       </article>
       <article class="blog-post">
         <h4 class="blog-post-title mt-4">Small discussion</h4>
-        <p>My train of thought about this problem on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
+        <p>My train of thought on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
         <div>
           <div class="row">
             <div class="col-md-12 mt-3">
@@ -182,13 +183,13 @@
           </div>
         </div>
         
-        <p class="mt-4"> After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. </p>
-        <p class="mt-1"> When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there existed already two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are perfect squares. Then I got the idea immediately. </p>
-        <p class="mt-1"> What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
+        <p class="mt-4"> Phrasing combinatorial questions as games is very useful for me! After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. </p>
+        <p class="mt-1"> When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there already were two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are both perfect squares.</p>
+        <p class="mt-1"> What if Ivan couldn't fix this situation? A fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
         <h3 class="mb-4"> <i>ok now what?</i> </h3>
-        <p class=" mb-3"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
+        <p class=" mb-3"> Well I need to see how often such a triple occurs. I attempted to solve the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the mutually "closest" $a,b,c$.</p>
         <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. <s>Proving such numbers exist for $n\geqslant 100$ is straightforward.</s> I struggled getting the bound as tight as the problem desired. I got $n \geq 106$ in the first 1.5h of the competition 
-        but couldn't manage to figure out if my calculations were faulty or I was missing something. "Surely", I thought, "this is the way to solve the problem so I must have missed something while solving the quadratics..". Turns out I could have 
+        but couldn't manage to figure out if my calculations were faulty or I was missing something. "Surely", I thought, "this is the way to solve the problem so I must have missed something while solving the system of equations..". Turns out I could have 
       just found examples for $n=100,\ldots,106$ which would have been much easier than trying to fix the quadratics. Lost one point because of this. Luckily, it wasn't a deciding point for the bronze medal. </p>
         <hr>
         <h3 class="mb-4 mt-4">Problem 4</h3>
@@ -205,14 +206,15 @@
           </div>
         </div>
         <div class="px-4 pt-2 my-2 text-center border-bottom">
-          <img src="/images/imop4.jpg" class="img-fluid">
+          <img src="/images/blog/reflection_on_IMO/imop4.jpg" class="img-fluid" style="max-width: 400px;">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
         </div>
         </div>
-        <p class="mt-3">For some reason, this took me over 2 hours. I think I just got scared of the weird thing to prove and the fact that my diagram led me to believe it was harder than it actually was.</p>
-        <p> First I reduced it to a sum of three lines by tangent segments: $AD=AS+SD=AP+DR$ similarily $CD=DS+CQ$ thus it's enough to prove $PX+XT+TR = QZ + ZY+ YS$.  </p>
-        <p> At first I didn't think this was mega useful. After playing with angles for a long while i realised $\angle TIX = \angle YIZ$ which implies $XT = YZ$ and I knew I was done once I got this. </p>
+        <p class="mt-3">For some reason, this took me over 3 hours to solve. I think I just got scared of the weird problem statement. It also didn't help that my diagram led me to believe it was harder than it actually was (I trusted my diagram 
+          too much and convinced myself that $XT \neq YZ$ since it was off by 7 milimeters in my diagram. Never draw diagrams with pens, always use pencils/graphite with narrow tip).</p>
+        <p> First I reduced it to a sum of three lines by tangent segments: $AD=AS+SD=AP+DR$ similarily $CD=DS+CQ$ thus it was enough to prove $PX+XT+TR = QZ + ZY+ YS$.  </p>
+        <p> At first I didn't think this was really useful. After playing with angles for a long time I realised $\angle TIX = \angle YIZ$ which actually does imply $XT = YZ$ and I knew I was done once I got this. </p>
         <p> Something trivial I didn't notice at first was that since $AI$ is the exterior angle bisector of $\angle XAY$ we must have $I$ is the midarc of $XY$ with $A$ hence $XI=YI$ and similarily $TI=ZI$ so we must have $TZ||XY$ and hence $TX=YZ$ (by symmetry). This was much faster than the angle chase I figured out. </p>
         <p> Now we're almost done since $\triangle YSI \cong \triangle XPI$ and so $YS=XP$ similarily $ZQ=TR$ and hence the conclusion!</p>
         <hr>
@@ -230,7 +232,7 @@
             </div>
           </div>
         </div>
-        <p> So since P4 was not that easy for me, did not have enough time to fiddle enough with this problem which is sad. Now, nearly 6 months later, I sat down and solved it. It took me about 2.5 hours, which is not usually the case with P1/P4 problems on the IMO.</p>
+        <p> So since P4 was not that easy for me, did not have enough time to fiddle enough with this problem which is sad. Now, nearly 6 months later, I sat down and solved it. It took me about 2.5 hours, which is not usually the case for me with P2/P5 problems on the IMO.</p>
       </article>
     </div>
   </div>

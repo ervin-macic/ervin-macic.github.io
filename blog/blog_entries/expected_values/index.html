@@ -52,7 +52,7 @@
         </div>
       </div>
     </nav>
-    <div class="spacer layer1"></div> 
+    <div class="placeholder dark-white"></div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
@@ -60,9 +60,9 @@
         <img id="meowth" class="vc-image-1 shadow"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unexpected expected values</em></h1>
-      <p class="lead mb-2 m-3">In this blog post I will discuss the diverse applications of expected values through unusual examples. </p>
-      <p class="lead mb-2 m-3"> It's a fun concept. A friend and I held a lecture at Maths Beyond Limits Balkans on it: <a target="_blank" href="https://drive.google.com/file/d/1HOuWyGL4FVjX_r-kLOqEOXAho1i4l9vS/view?usp=sharing">MBL Lecture</a> </p>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Expected values</em></h1>
+      <p class="lead mb-2 m-3">I will discuss the diverse applications of expected values on some unusual examples. </p>
+      <p class="lead mb-2 m-3"> I held a lecture at Maths Beyond Limits Balkans on it: <a target="_blank" href="https://drive.google.com/file/d/1HOuWyGL4FVjX_r-kLOqEOXAho1i4l9vS/view?usp=sharing">MBL Lecture</a> </p>
     </div>
   </div>
 </div>
@@ -74,14 +74,13 @@
         Mathematics - Expected value - Method of Pertrubation
       </h3>
       <article class="blog-post">
-        <h2 class="blog-post-title"> Unexpected expected value</h2>
+        <h2 class="blog-post-title"> Expected values</h2>
         <p class="blog-post-meta">Apr 7, 2023</p>
         <p>As mentioned, I have a written-out lecture from <a target="_blank" href="https://mathsbeyondlimits.eu/balkans/">MBL-B</a> on this topic: <a target="_blank" href="https://drive.google.com/file/d/1HOuWyGL4FVjX_r-kLOqEOXAho1i4l9vS/view?usp=sharing">here.</a></p>
-        <p> The expected value of an event is the sum of all expected values of all possible outcomes of that event. Now what's the expected value of an outcome is simple
-        ; it's just the value of that particular outcome times its likelihood. The expected value of any <strong>event</strong>, put mathematically: <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3">\[  \textnormal{Expected value} (\textnormal{event}) = \sum \limits_{\textnormal{outcome}}^{\textnormal{all possible outcomes}} \ \textnormal{Value(outcome)} \cdot P(\textnormal{event = outcome}) \]</div>
-        or with standard notations, $X$ being the name for the event and $x$ being the value of the event.
+        <p> The expected value of an event is the sum of all expected values of all possible outcomes of that event. Now what's the expected value of an outcome is simple: it's just the value of that particular outcome times its probability. The expected value of any <strong>event</strong>: <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3">\[  \textnormal{Expected value} (\textnormal{event}) = \sum \limits_{\textnormal{outcome}}^{\textnormal{all possible outcomes}} \ \textnormal{Value(outcome)} \cdot P(\textnormal{event = outcome}) \]</div>
+        or with standard notations, $X$ being the random variable representing the event and $x$ being the value of the random variable for a particular outcome.
         <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3">\[ \mathbb{E}[X] = \sum \limits_{x}^{} \ x \cdot P(X = x) \]</div>
-        Note the differences in capitalization of $x$ represent different things. To make this clear, here's the standard example: 
+        Note the differences in capitalization of $x$. To make this clear, here's the first example given in most textbooks: 
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <img src="https://pngimg.com/uploads/dice/dice_PNG49.png" class="img-fluid">
@@ -90,38 +89,40 @@
           <p class="lead mb-4"> Imagine you throw a six-sided dice $100$ times and add up all the numbers you got. What approximate number do you expect i.e. what's the expected value of this event? </p>
         </div>
         </div>
-        Going by the above definition the problem would be partitioned into $6$ events: you roll a $1$, you roll a $2$ ... you roll a $6$. Calculating the expected value of one dice roll you get: $1/6 \cdot 1 + 1/6 \cdot 2 + ... + 1/6 \cdot 6 = 3.5$.
+        Going by the above definition the problem would be partitioned into $6$ events: you roll a $1$, you roll a $2$ ... you roll a $6$. Being explicit 
+        about the random variable is important. Here the random variable is the function returning $x$ the number we get on the dice roll. 
+        Calculating the expected value of one dice roll you get: $1/6 \cdot 1 + 1/6 \cdot 2 + ... + 1/6 \cdot 6 = 3.5$.
         It is obvious that the expected values "stack" (you can verify by calculating the $100$ at once) so we can conclude that the expected value of our $100$ rolls is $350$.
         <hr>
         
-        <p><s>When I was little, </s>I love<s>d</s> to play the Pokémon Trading Card Game. Though, I hated these types of moves: </p>
+        <p><s>When I was little, </s>I love<s>d</s> to play the Pokémon Trading Card Game. Though, I was confused by these types of moves: </p>
         <div class="px-5 pt-2 my-2 text-center">
           <img src="https://cdn.shopify.com/s/files/1/0128/0782/products/xy3-21_grande.jpg?v=1495819968" style="height: 400px;">
         <div class="col-lg-6 mx-auto p-3">
-          <p class="lead mb-4"> "Flip $3$ coins. This attack does $10$ damage times the number of heads." </p>
+          <p class="lead mb-4"> <b>Fury Swipes: </b> Flip $3$ coins. This attack does $10$ damage times the number of heads. </p>
         </div>
         </div>
         <div class="px-5 pt-2 my-2 text-center">
           <img src="https://i.pinimg.com/originals/0d/8d/52/0d8d52114c6ee2098a52ff84b57697c8.jpg" style="height: 380px;">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4"> "Flip a coin until you get tails. This attack does $30$ damage times the number of heads." </p>
+          <p class="lead mb-4"> <b>Iron Tail: </b>Flip a coin until you get tails. This attack does $30$ damage times the number of heads. </p>
         </div>
         </div>
         <p> I didn't know whether I should save up more energy for the second attack or do the first attack for less energy. I didn't know whether the move is any good compared to other Pokémon's moves I could have put into my deck.
-          I didn't have an idea of what's the average damage of the first move. After I learned enough math and taught myself
-          expected values, I decided to figure it out.
+          I didn't have an idea of what's the average damage of the first move. After I learned enough math I decided to figure it out. <em>(That is probably the single best way of learning math,
+          start with a problem you want to solve and then learn the math you need to solve it.)</em>
         </p>
         <p>
-          I found the average in two ways. First one using pretty standard calculations with probability and the second
+          I found the answer in two ways. The first way using pretty standard calculations with probability and the second
           one I used <b>Linearity of Expectations</b>. I'll first work on the Cubchoo.
         </p>
         <h3>Cubchoo's move - Fury Swipes</h3> <hr>
-        <h3> Solution 1: </h3>
+        <h4> Solution 1: </h4>
         
         <p>
           Let $T$ be tails, and $H$ be heads. $HTT$ means we got one heads in three throws and it was in the first
-          throw. <br> There's a total of $8$ different possible outcomes of these $3$ coin flips:
+          throw. <br> There's a total of $8$ <b>equally likely</b> different possible outcomes for these $3$ coin flips:
           <br>
           <div style="overflow-x: auto; overflow-y: hidden;">\[ TTT, TTH, THT, THH, HTT, HTH, HHT, HHH \]</div>
           <p>
@@ -129,43 +130,48 @@
           </p>
          
           <br>
+          <p>
           The outcome $TTT$ has value $0$ and its probability of happening is $1/8$.<br> 
           The outcome $HHH$ has value $10 \times 3$ and probability $1/8$. <br> 
           The outcomes $HTT, THT, TTH$ have value $30$ and probability $3/8$ that any of them happens. <br> The outcomes $HHT, HTH, THH$ have value $20$ and probability $3/8$ that any of them happens. <br><br> We've covered all cases and can calculate the expected value now: 
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Fury Swipes}] = \frac{1}{8} \cdot 0 + \frac{1}{8} \cdot 30 + \frac{3}{8} \cdot 20 + \frac{3}{8} \cdot 10 = 15 \]</div> <br><br> 
           It turns out that it's no accident that this is $3
-          \cdot 10 /2$. Generalizing the move to $n$ throws, each dealing $d$ damage we get: $\frac{d\cdot n}{2}$. Here's the proof:
-          <br> <br>
+          \cdot 10 /2$. 
+          </p>
+          <h5>Generalization</h5>
+          <p>Generalizing the move to $n$ throws, each dealing $d$ damage the answer is $\frac{d\cdot n}{2}$. Here's the proof:</p>
+          <p>
           We need to calculate the probability of having exactly $k$ heads $(k \in (0,n) )$. This is the same as calculating the number of binary
           strings of length $n$ with exactly $k$ ones. This is just the number of ways to choose $k$ places to place the ones, so this is ${n \choose k}$. 
           So this contributes to our expected value with $\frac{n \choose k}{2^n} \cdot d \cdot k$. <br>
-          We need to calculate the sum <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3"> \[ \sum \limits_{k=0}^{n} {d \cdot k} \cdot \frac{n \choose k}{2^n} = d \cdot \sum \limits_{k=0}^{n} k \cdot \frac{n \choose k}{2^n} = 
+          We need to calculate the sum <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3"> \[ \mathbb{E}[X] = \sum \limits_{k=0}^{n} {d \cdot k} \cdot \frac{n \choose k}{2^n} = d \cdot \sum \limits_{k=0}^{n} k \cdot \frac{n \choose k}{2^n} = 
           d \cdot \sum \limits_{k=0}^{n} n \cdot \frac{n - 1 \choose k - 1}{2^n} = \frac{dn}{2} \] </div>
           I used the following facts: \[ (1+1)^n = \sum \limits_{k=0}^{n} {n \choose k} = 2^n \] 
           \[ k \cdot {n \choose k} = n \cdot {n-1 \choose k-1} \]
+          </p>
         </p>
         <hr>
-        <h3> Solution 2: </h3>
+        <h4> Solution 2: </h4>
         
         <p>
           A much faster solution is to use <b>Linearity of Expectations</b>. Linearity says that $\mathbb{E}[A+B] = \mathbb{E}[A] + \mathbb{E}[B]$ for $A,B$ independent
-          or dependent events. For example, if we have two dice rolls the expected value of this event as a whole is the same as the expected
-          value of the first dice roll plus the second roll. <br> This logic allows us to destroy the above problem. Each coin flip is an event
+          or dependent random variables. For example, if we have two dice rolls the expected value of this event as a whole is the same as the expected
+          value of the first dice roll plus the second roll. <br> This now makes the above problem easy. Each coin flip is an event
           of its own and has its own expected value. The expected value of one coin flip is obviously $d/2$ so since we have $n$ flips 
           the expected value will be $dn/2$ and we're done. 
-          <br> This might not be too impressive, but the second link in further reading will show the true power of <b>LoE</b> (Linearity of 
+          <br> This might not be too impressive. The second link in further reading will show the true power of <b>LoE</b> (Linearity of 
           Expectations) on the problem <i>What's the expected number of cycles in a random permutation?</i>. <br> <br> <b>Spoiler:</b> turns out for $n$ elements it's the harmonic sum up until $n$ terms.
         </p>
         <hr>
         <h3>Pikachu's move - Iron Tail</h3>
         <p>
-          As a fun exercise, try to determine the expected value of Pikachu's move that deals an additional $30$ damage for each flip until you get a tails. 
+          As another fun exercise, lets try to determine the expected value of Pikachu's move that deals an additional $30$ damage for each flip until you get a tails. 
           The answer is somewhat surprisingly just $30$. In general for $d$ damage per heads the answer is $d$.<br><br>
           Here's a nice diagram that depicts the possibility space of the flips:
         </p>
         <hr>
         <div class="px-5 pt-2 my-2 text-center">
-          <img src="/images/blog/pikachutree.jpg" style=" width: 100%; height: auto; max-width: 600px;">
+          <img src="/images/blog/expected_values/pikachutree.jpg" style=" width: 100%; height: auto; max-width: 600px;">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4"> Each level down you go, you add $1/2$ to probability of it happening. </p>
@@ -183,21 +189,24 @@
           You can find the above sum in a plethora of ways (See most of them <a target="_blank" href="https://math.stackexchange.com/questions/337937/why-sum-k-1-infty-frack2k-2">here</a>). My favorite go-to method is the <b>Method of Pertrubation</b>:
           <br>
           <br>
-          Denote the sum up until $k$ terms as $s_k$. I'll find the closed form of $s_k$. <br>
+          Denote the sum up until $k$ terms as $s_k$. I'll find the closed form of $s_k$. Rewrite it in two ways and compare: <br>
           <div style="overflow-x: auto; overflow-y: hidden;"> \[ s_{k+1} = s_{k} + \frac{k+1}{2^{k+1}} = \frac{1}{2}+(\frac{2}{2^2}+\frac{3}{2^3}+\ldots + \frac{k+1}{2^{k+1}}) \]</div> 
           <div style="overflow-x: auto; overflow-y: hidden;"> \[ = \frac{1}{2} + (\frac{1}{2^2} + \ldots \frac{1}{2^{k+1}}) + \frac{1}{2}(\frac{1}{2} + \frac{2}{2^2} + \ldots + \frac{k}{2^k}) \] </div>
           <div style="overflow-x: auto; overflow-y: hidden;"> \[ = \frac{1}{2} + \frac{1}{4} \cdot (1-\frac{1}{2^k}) \cdot 2 + \frac{1}{2} \cdot s_k\] </div>
           \[ \implies s_k = 2 - \frac{k+2}{2^k} \]
-          I left out the comparing of the first equation with the last. It's straightforward. <br>
-          Hence its limit is $2$ as $k$ goes to infinity since $k+2$ is eaten up by the $2^k$. <br>
+          I left out the comparing of the first equation with the last. It's straightforward. 
+          Hence its limit is $2$ as $k$ goes to infinity since $k+2$ is eaten up by the $2^k$.
           The idea is to first separate the first term and the last and then compare the two expressions. The goal is to
           manipulate the both sides to reach previous terms, analogous to recursion. It works on a lot of different sums and 
-          is very useful to keep in mind.<br>
+          is very useful as another tool for such summations.<br>
+          <p>
+            The easiest way to solve this sum is to differentiate the geometric series (but this requires The Differentiation Theorem for Power Series which is non-trivial).
+          </p>
           Such sums are also called <b>arithmetico-geometric</b> sums. They can be calculated with the trick of multiplying by $1/2$ and then subtracting from 
           the original sum - something very similar to the Pertrubation method. Read more on <a target="_blank" href="https://en.wikipedia.org/wiki/Arithmetico-geometric_sequence">arithmetico-geometric series.</a>
         </p> <hr>
         <p>
-          The Pikachu problem is actually a subcase of the <b>Mean Time to Failure problem</b> which states the following:
+          The Pikachu problem is actually a case of the <b>Mean Time to Failure problem</b> which states the following:
         </p>
         
         <div class="problem">
@@ -210,10 +219,10 @@
           $7$ times with $1$ crash. <br> 
           We've already proved this problem for the subcase $p=1/2$ (with the added $d$ in front for damage) and got the result. Think of the tails as being 
           a crash and the heads adding $1$ to our counter of how many have already been heads/not crashed. <br>
-          Let $\mathbb{E}[X]$ denote the expected number of games until you crash. Examine the first try - the first time you tried turning on Pokémon. We 
+          Let $\mathbb{E}[X]$ denote the expected number of games until you crash. Condition on the first try - the first time you tried turning on Pokémon. We 
           divide our examination into two cases: $1)$ It turned on, yay! $2)$ It crashed, nay. Here's the equation we get:
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{number of attempts until failure}] = \mathbb{P}(\textnormal{of failure}) \cdot 1 + \mathbb{P}(\textnormal{of success}) \cdot \mathbb{E}[\textnormal{number of attempts until failure in this case}]\]</div>
-          <p>In general if we let $X$ be the r.v. number of attempts until failure, $F$ failure and $S$ success we have: </p>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{number of attempts until failure}] = \mathbb{P}(\textnormal{of failure in first try}) \cdot 1 + \mathbb{P}(\textnormal{of success in first try}) \cdot \mathbb{E}[\textnormal{number of attempts until failure in this case}]\]</div>
+          <p>In general if we let $X$ be the r.v. representing the number of attempts until failure, $F$ failure and $S$ success we have: </p>
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X] = \mathbb{P}(F)\cdot \mathbb{E}[X|F] + \mathbb{P}(S) \cdot \mathbb{E}[X|S] \]</div>
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X]= p \cdot 1 + (1-p) \cdot (\mathbb{E}[X] + 1) \]</div>
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \implies \mathbb{E}[X] = \frac 1p \]</div>
@@ -222,8 +231,9 @@
           Calculating directly instead of the case examination would lead us to the following solution:
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X] = \sum \limits_{1}^{\infty} k \cdot (1-p)^{k-1}\cdot p = \frac 1p \]</div>
         </p>
+        <h5>A further (simple) example</h5>
         <p>
-          "As a further example, suppose a couple insists on having children until they get a boy, then how many baby girls should they expect 
+          As a further example, suppose a couple insists on having children until they get a boy, then how many baby girls should they expect 
           before their first boy? Assume for simplicity that there is a $50%$ chance that a child will be a boy and that the genders of siblings 
           are mutually independent. This is really a variant of the previous problem. The question, “How many hours until the program crashes?” 
           is mathematically the same as the question, “How many children must the couple have until they get a boy?” In this case, a crash corresponds 
@@ -231,7 +241,7 @@
           Since the last of these will be a boy, they should expect just one girl. <strong>So even in societies where couples pursue this commitment to boys, 
             the expected population will divide evenly between boys and girls.</strong>" (taken from <a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a>)
         </p>
-        <h3>Problems</h3>
+        <h3>Practice problems</h3>
         <dl>
           <dt>Problem 1 <a target="_blank" href="https://en.wikipedia.org/wiki/Random_permutation_statistics">(Random permutations)</a></dt>
           <dd> Each year, as part of a <b>“Secret Santa”</b> tradition, a group of $n$ friends write their names on slips of papers and place the slips into a hat. Each member of the group draws a name at random from the hat and must by a gift for that person. Of course, it is possible that they draw their own name, in which case they buy a gift for themselves. What is the expected number of people who draw their own name? </dd>

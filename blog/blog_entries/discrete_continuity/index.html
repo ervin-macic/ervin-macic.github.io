@@ -51,7 +51,7 @@
         </div>
       </div>
     </nav>
-    <div class="spacer layer1"></div> 
+    <div class="placeholder dark-white"></div> 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
@@ -60,8 +60,8 @@
       </div> 
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity</em></h1>
-      <p class="lead mb-2 m-3">In this blog post I will discuss continuity and its many forms. It's unusually common but little accent is given to it. The solutions are elegant and some the most beautiful arguments in math. </p>
-      <p class="lead mb-2 m-3">The techniques overviewed will be plain and discrete continuity. These are most often used through the Intermediate value theorem <strong>(IVT)</strong> in olympiads. </p>
+      <p class="lead mb-2 m-3">I will discuss continuity and its many forms (including combinatorial, discrete form). The solutions are elegant and some the most beautiful arguments in math. </p>
+      <p class="lead mb-2 m-3">The techniques overviewed will be continuous and discrete continuity. The underlying tool everything hinges on is the Intermediate value theorem <strong>(IVT)</strong>. </p>
     </div>
   </div>
 </div>
@@ -75,9 +75,9 @@
       <article class="blog-post">
         <h2 class="blog-post-title"> A life lesson & cool problems</h2>
         <p class="blog-post-meta">October 25, 2021</p>
-        <p> While going through the olympiad system in my country we used to learn almost no theory and that was especially a thing in combinatorics. I don't think that we had a specific lesson in combinatorial theory at all. 
-          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. I want to dedicate this section to a specific problem. Not so long ago
-          this problem appeared on our <strong>TST</strong> (here in Bosnia):
+        <p> While learning olympiad math in my country I learned relatively little theory compared to what contestants from other countries learned and that was especially the case in combinatorics. 
+          I think it's a good thing to know the names of some techniques in combinatorics, even though they can't be labbeled as nicely as in geometry. I want to dedicate this section to a specific problem. Not so long ago
+          this problem appeared on the Bosnian and Herzegovinian <strong>IMO Team Selection Test</strong> as the first, easiest problem:
         </p>
         <div>
           <div class="row">
@@ -85,26 +85,26 @@
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h4> BIHMO 2020 Day 1 Problem 1</h4>
                 <hr class="thick">
-                <p>Integers are written on the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all $n$ such that with certainty one can conclude that there are two diametrically opposite (antipodal) points on this circle which have equal value.  </p>
+                <p>Integers are written on the vertices of a regular $n$-gon, such that the absolute difference between any two integers in adjacent vertices is $0$ or $1$. These vertices split the circumference of the $n$-gon into $n$ equal arcs. At the midpoint of each of these $n$ equal arcs we write the arithmetic mean of the numbers that form that arc (see example below). Determine all $n$ such that with certainty one can conclude that there are two diametrically opposite (antipodal) points on this circle which have equal value.  </p>
               </div>
             </div>
           </div>
         </div>
         <div class="px-5 pt-2 my-2 text-center border-bottom">
-          <img src="/images/bihmo2020p1.jpg" class="img-fluid">
+          <img src="/images/blog/discrete_continuity/bihmo2020p1.jpg" class="img-fluid">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">This here is the case for $n=5$. Notice the diametrically opposite points with value $3$.</p>
+          <p class="lead mb-4">This here is an arbitrary example in the case $n=5$. Notice the diametrically opposite points with value $3$.</p>
         </div>
         </div>
 
-        <p>Before I start explaining the solution of the above problem, let me showcase some other problems.</p>
+        <p>Before I start explaining the solution to the above problem, let me showcase some other problems with similar flavour:</p>
         <ol>
           <li>Prove that <b>all</b> <b>roots</b> of the polynomial <div style="overflow-x: auto; overflow-y: hidden; overflow-y: hidden;">$P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$</div> are real.</li>
           <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> if and only if there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
           <li> <a href="https://artofproblemsolving.com/community/c6h34319p213018" target="_blank" rel="noopener noreferrer">(USAMO 2005)</a>  Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</li>
         </ol>
-        <p>And their respective "outline" solutions:</p>
+        <p>...and the respective outlined solutions:</p>
         <dl>
           <dt>Problem 1</dt>
           <dd>Look at the polynomials at the inputs $x=0,1,2,3,4,5,6,7$. Pay particular attention to the sign of the value you get. What can you conclude with the information that $P(0) > 0$ and $P(1) < 0 $? </dd>
@@ -113,43 +113,52 @@
           <dt>Problem 3</dt>
           <dd> Look at the convex hull. Try moving the line and see what changes and by how much.</dd>
         </dl>
-        <h2 class="mt-4 mb-4"> <b>The point</b> </h2>
+        <h3 class="mt-4 mb-4"> <b>The point</b> </h3>
         <p> All three of these problems share the same vibe. They all rely on some sort of continuity. But what does it mean to be continuous? A function is said to be continuous at the point $a$ if the following conditions hold: </p>
         <dl>
           <dt>First condition</dt>
           <dd> The function at $a$ is defined, i.e. $f(a)$ is defined.</dd>
           <dt>Second condition</dt>
-          <dd>The limit at that point exists, i.e. $\lim_{x\to a} f(x)$ exists</dd>
+          <dd>The limit at that point exists, i.e. $\lim_{x\to a} f(x)$ exists (i.e. there exists an $L \in \mathbb{R}$ such that for all $\varepsilon > 0$ there exists a $\delta > 0$ such that whenever $|x-a|<\varepsilon$ then $|f(x)-L|<\delta$).</dd>
           <dt>Third condition</dt>
-          <dd>Finally, the "most important" condition: $\lim_{x\to a} f(x) = f(a)$. </dd>
+          <dd>Finally, the "most important" condition: $\lim_{x\to a} f(x) = f(a)$ (i.e. exactly $L=f(a)$ in the above expression). </dd>
         </dl>
         <p> So a functions is said to be continuous on an interval if it is continuous at every point in that interval. Examples of continuous functions are all the 
           "normal" functions we deal with in most of math (for example, all polynomials are continuous). So when is a function not continuous, i.e. discontinuous? Here is an illustration of the types of discontinuity: </p>
         <div class="container">
-          <img src="/images/blog/discontinuity.jpg" class="img-fluid">
+          <img src="/images/blog/discrete_continuity/discontinuity.jpg" class="img-fluid">
         </div>
-        <p> Of course, as in all things in math, this can be generalized. We can generalize the notion of continuous functions to metric spaces (and topological spaces):</p>
+        <p> A particularily interesting discontinuous function is the <b>Dirichlet Function:</b> </p>
+        \[ f(x) = \begin{cases}
+          1 & \text{if } x \text{ is rational} \\
+          0 & \text{if } x \text{ is irrational}
+        \end{cases} \]
+        <p> This function is discontinuous at every point in $\mathbb{R}$. For every $p \in \mathbb Q$ and every open interval $(p-\varepsilon, p+\varepsilon)$ there exists an irrational $q \in (p-\varepsilon, p+\varepsilon) $ (not hard to show, this 
+          is the statement that the irrationals are dense on $\mathbb R$) so $f(q)=0$ while $f(p)=1$.
+          Similar reasoning shows that all irrational points are also points of discontinuity. </p>
+          <h4>Generalization</h4>
+        <p> As in most things in math, the notion of continuity can be generalized. We can generalize the notion of continuous functions to metric spaces (and topological spaces):</p>
 
         <div class="container-fluid shadow-sm">
           <br>
           <h5><b>Metric space </b></h5>
           <p class="pb-3"> Let $f$ be a function from a metric space $(X,d_x)$ to $(Y,d_y)$, and $x$ is any point in $X$. We say $f$ is continuous at $x$, if for every sequence $(x_n)$ converging to $x$ the sequence $(f(x_n))$ converges to $f(x)$. </p>
         </div>
-        
-        <p>An intuitive way of thinking about it is that the function does not "skip" any points. A formal theorem exists: </p>
           <h4>The Intermediate Value Theorem (IVT)</h4>
           <div class="container center-block mt-4 mb-4">
-            <img src="/images/blog/IVT.svg" class="img-fluid mx-auto d-block">
+            <img src="/images/blog/discrete_continuity/IVT.svg" class="img-fluid mx-auto d-block">
           </div>
           <div class="container-fluid shadow-sm">
             <br>
             <h5><b>The Intermediate Value Theorem</b></h5>
-            <p class="pb-3">For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$. </p>
+            <p class="pb-3">For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $c$ between $f(a)$ and $f(b)$ there exists a number $\xi$ such that $f(\xi)=c$. </p>
           </div>
          <h5> Proof </h5>
          <hr>
          <p> The proof is a classic real analysis proof and you can find one proof of it <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a> for example. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
-         <p> Usually in olympiads continuity for discrete sets is most useful, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
+         <p>Another cool proof is using a <b>Divide and Conquer</b> approach like Binary Search. Define $a_0=a, b_0=b$ and consider the function value at $\frac{a_n+b_n}{2}$ and adjust the new $a_{n+1}, b_{n+1}$ accordingly.
+        Note that $a_n \leq b_n$ always and $a_n, b_n$ both monotonic sequences so a limit exists. Not hard to show that this limit is the desired $\xi$. </p>
+         <p> Usually in olympiads continuity for discrete sets is most useful, i.e. for integers (although some specific functional equations might be an exception). Now I present the solution of the introductory problem in two steps: </p>
         <h3> Solution: </h3>
         <hr>
         <ul>
@@ -157,7 +166,7 @@
           <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). 
             Therefore, $n$ isn't odd. In the illustration below, black points are vertices of the polygon while the red points are the midpoints of the arcs between the vertices. </li>
           <div class="px-5 pt-2 my-2 text-center border-bottom">
-            <img src="/images/nonagon.jpg" class="img-fluid">
+            <img src="/images/blog/discrete_continuity/nonagon.jpg" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">The only integer value at a midarc is the red $4$, but it's antipode is $0$ and the rest are not integers.</p>
@@ -166,13 +175,15 @@
           <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Assume there aren't two antipodal points that have equal value. Place a pencil in the middle and keep its tip pointing to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the starting position but in the reverse direction. This can't be since we keep the pencil 
           pointed to the bigger number. This would mean that at that point the numbers are equal but this can't be by our assumption. But when the pencil flips, the midarc between the place it flipped must be the pair of points we're looking for. Thus our assumption is wrong and there must exist two antipodal points of equal value. </li>
           <div class="px-5 pt-4 my-4 text-center border-bottom">
-            <img src="/images/pencils.gif" class="img-fluid">
+            <img src="/images/blog/discrete_continuity/pencils.gif" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
             <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done. $\blacksquare$</p>
           </div>
         </ul>
-        <p>The problem is done now. But this isn't the end of the story. Actually, a more general version of a similar problem holds. <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
+        <p>These remarks suffice to solve the problem. 
+        <h5>Borsuk-Ulam theorem</h5>
+          <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
         <h5>Formal definition</h5>
         <p> If $f:S^{n}\to \mathbb {R} ^{n}$ is continuous then there exists an $x\in S^{n}$ such that: $f(-x)=f(x)$.
           <dt>
@@ -186,19 +197,19 @@
           Here's how to steady your table or chair without any propping up with papers or similar.<br> <br> </p>
           <div class="center-block mt-4 mb-4 section d-flex justify-content-center embed-responsive embed-responsive-16by9" loading="lazy">
             <video controls loop autoplay muted style="width: 100%; height: auto; max-width: 500px;">
-              <source src="/images/blog/table.mp4" type="video/mp4">
-              <source src="/images/blog/table.mp4" type="video/ogg">
+              <source src="/images/blog/discrete_continuity/table.mp4" type="video/mp4">
+              <source src="/images/blog/discrete_continuity/table.mp4" type="video/ogg">
             Your browser does not support the video tag.
             </video>
           </div>
-          <p>Turn the table around its center in such a way that three legs always $A,B,C$ stay on the surface (the floor). <br>
+          <p>Turn the table around its center in such a way that three legs (label them $A,B,C$) always stay on the surface (the floor). <br>
           The distance of the fourth leg to the surface is a function $f(x)$ which depends on the angle $x$ of rotation around the center. <br>
           If $f(0)$ (the starting position) is positive, then $f(\pi/2)$ is negative and if $f(0)$ is negative then $f(\pi/2)$ is positive. <br> <br>
           Now, the <b>Intermediate Value Theorem</b> assures that there is an angle, where the fourth leg is also on the surface i.e. the table is steady. <br>
           You can see the full argument in more detail <a href="https://people.math.harvard.edu/~knill/teaching/math1a_2011/exhibits/wobblytable/index.html" target="_blank">here</a>, 
           <a href="https://www.youtube.com/watch?v=aCj3qfQ68m0" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=OuF-WB7mD6k" target="_blank">here</a>
         </p>
-        <h3>Problems</h3>
+        <h3>Practice problems</h3>
         <h4 class="text-primary">Introductory</h4>
         <dl>
           <dt>Problem 1</dt>
