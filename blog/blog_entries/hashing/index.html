@@ -86,7 +86,10 @@
           example, suppose we want to store peoples' addresses. For each person we are tasked to store their name as the key and home address as the value. 
           With proper notation, if $x$ is the name 
           of a person then $h(x)$ is the index at which the home address can be found (if the hash table is implemented using an array). 
-          Nothing too special, just a function. However, problems arise if by chance two people have the same name or hash to the same index (so $x=y$ causes $h(x)=h(y)$). 
+          Nothing too special, just a function. 
+          </p>
+          <p>
+          However, problems arise if by chance two people have the same name or hash to the same index (so $x=y$ causes $h(x)=h(y)$). 
           Trouble starts when we attempt to store more than one "item" in the same "slot". The efficiency of all hashing algorithms depends on how often this happens. There are two 
           common ways of hashing, either <b>linear probing</b> or <b>chaining</b> using linked lists. 
           When using an array of linked lists, once we want to recall a person's address, we hash their name (apply $h$ to $x$) to get the index in the hash table and if there are multiple names that hash to the same key,
@@ -188,7 +191,40 @@
         This is called a random variable with a <b>Geometric distribution</b>. <br>
         Now by the Linearity of Expectations we conclude:
        <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[T] = \mathbb{E}[T_1+T_2+ \ldots + T_k] = k \left ( \frac 11 + \frac 12 + \frac 13 + \ldots \frac 1k \right ) \]</div> 
-        These examples show the mathematics behind hashing and why we should care about collisions. <br> <br> <br>
+        These examples show the mathematics behind hashing and why we should care about collisions.
+        <hr>
+            <h3>Interesting Hash Table Problems</h3> 
+            <dl>
+              <dt>Problem 1 (Oxford Problem Sheet Question)</dt>
+              <dd>Each bucket in a hash table represents a mapping from certain keys (all those that have a
+certain hash code) to values. In our implementation of hash tables, each bucket is represented
+as an unordered linked list, with a time for lookup of $O(N)$, where $N$ is the length of the list.
+Wouldn’t it be a good idea to replace these linked lists with some other data structure that
+represents a mapping with better asymptotic complexity? </dd>
+              <dt>Problem 2 (Oxford Problem Sheet Question)</dt>
+              <dd> Suppose a hash table with $N$ buckets is filled with $n$ items, and assume that the values of
+the hash function for the $n$ items are independent random variables uniformly distributed in
+$\text{[0..N)}$. What is the probability distribution for the number of items that fall in a particular
+bucket? What is the expected number of comparisons of keys that are performed when get
+is called and the search is (a) successful and (b) unsuccessful? </dd>
+            </dl>
+            <dt>Problem 3 (Oxford Problem Sheet Question)</dt>
+            <dd>The hash tables we have been studying use chains of dynamically allocated records to deal
+with the collisions that occur when two keys have the same hash code. This scheme has the
+advantages that it is easy to implement, and has a performance that degrades only gradually
+when the table contains many records.
+An alternative that avoids dynamic allocation is to use a fixed array of records
+$\text{table[0..MAX)}$. If a key $k$ hashes to $h$, and slot $\text{table[h]}$ in the array is already occupied by
+another key, then slots $\text{table[h+1], table[h+2],...}$ are tried until we find either the key $k$,
+or an empty slot (meaning that $k$ is not present); the search wraps round at the end of the
+array. This idea is called “closed hashing” (or “probing” in the lectures).
+Write an implementation of the ‘bag-of-words’ module based on this idea, with operations
+to add a word, find the count of a word, and to delete a word. Think carefully about how to
+implement deletion. Note that the simplest way of dealing with a completely deleted word is
+to set its count to 0. This is an acceptable solution but, since it has the potential to fill the
+table with “empty” entries, you may like to try a more sophisticated approach such as closing
+up gaps. Give a suitable datatype invariant. Your implementation does not need to be able
+to store more than $\text{MAX}$ entries (so you can ignore the issue of re-sizing).</dd>
        <h4 class="text-primary">References and links for further reading</h4>
         <ul>
           <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
