@@ -27,7 +27,7 @@
   transform: translate(-50%, -50%) rotate(var(--r, 0deg));
   background-image: url('/images/thumbnail/oxford_vs_etf.png');
   background-position: center;
-  background-size: 360px auto;
+  background-size: cover;
 }
 #meowth {
   position: relative;
