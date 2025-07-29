@@ -293,7 +293,7 @@
           <div class="row g-4 justify-content-center">
             <div class="col-sm-6 col-md-4 col-lg-3">
               <figure style="margin: 0;">
-                <img src="/images/blog/oxford_vs_etf/etf/sarajevo_rose_in_campus.jpg" alt="Steleks water damage" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+                <img src="/images/blog/oxford_vs_etf/etf/sarajevo_rose_in_campus.jpg" alt="Shelling impact" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
                 <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
                   Immediately next to the old carpet, there was a remnant of the war in Bosnia and Herzegovina, a Sarajevo Rose. It would have been nice if it was at least 
                   filled in with red resin or something, but it was just a hole in the ground with some concrete filling it. A Sarajevo Rose is a memorial for the victims of the war in Bosnia and Herzegovina, 
@@ -303,7 +303,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
               <figure style="margin: 0;">
-                <img src="/images/blog/oxford_vs_etf/etf/windows_nailed_shut.jpg" alt="Steleks water damage" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px; border-radius: 12px;">
+                <img src="/images/blog/oxford_vs_etf/etf/windows_nailed_shut.jpg" alt="Windows nailed shut" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px; border-radius: 12px;">
                 <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
                   During the very beginning of the first term, the windows in the A1/A2 building being faulty. Somebody wrote on a piece of paper not to open the windows as they were broken.
                   Some people still opened them. The next day and for the remainder of my first year at ETF, the windows were nailed shut. We would keep the door of the lecture room 
@@ -313,7 +313,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
               <figure style="margin: 0;">
-                <img src="/images/blog/oxford_vs_etf/etf/broken_glass.jpg" alt="Steleks water damage" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px;">
+                <img src="/images/blog/oxford_vs_etf/etf/broken_glass.jpg" alt="Broken glass door in front of STELEKS" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px;">
                 <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
                   In the A3 building, there was a broken glass door that was never fixed. The door was broken for the entire duration of my first year at ETF Sarajevo.
                 </figcaption>
@@ -321,7 +321,7 @@
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3">
               <figure style="margin: 0;">
-                <img src="/images/blog/oxford_vs_etf/etf/quick_fix_asphalt.jpg" alt="Steleks water damage" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px;">
+                <img src="/images/blog/oxford_vs_etf/etf/quick_fix_asphalt.jpg" alt="Quick asphalt fix" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 200px;">
                 <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
                   The path to the A1/A2 building wasn't paved. Once holes start appearing after rain, they filled them in with asphalt which would also partially be washed 
                   away by the rain.
@@ -337,7 +337,7 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/informal_hall.jpg" alt="Oxford Exam School" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 500px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/informal_hall.jpg" alt="Informal hall in Pembroke College hall" onclick="openLightbox(this)" style="width: 100%; height: auto; max-width: 500px;">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               A picture taken during an informal hall (aka lunch) at Pembroke College, Oxford in our dining hall.
               The food is usually very good and the portions are decent. An average meal costs 4-6 pounds. Lots of vegan, vegetarian, and halal options.
@@ -381,10 +381,13 @@
           }
         </style>
         <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
-          <span class="close-button" onclick="closeLightbox(event)">&times;</span>
-          <img class="lightbox-content" id="lightbox-img">
-          <div id="lightbox-caption" class="lightbox-caption"></div>
-        </div>
+  <span class="close-button" onclick="closeLightbox(event)">&times;</span>
+
+  <div class="lightbox-center" onclick="event.stopPropagation()">
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
         <h4>Oxford vibe</h4>
         <!-- Third row of images -->
         <div class="container py-4">
