@@ -6,6 +6,7 @@
     <title>Oxford vs ETF Sarajevo</title>
     <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
     <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
+    <link href="/blog/blog_entries/oxford_vs_etf/modal.css" rel="stylesheet" type="text/css"> <!-- for lightbox modal -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/css/hover.css" rel="stylesheet" media="all"> <!-- effects on hover navbar-->
     <!-- <link href="/style.css" rel="stylesheet" type="text/css"> -->
@@ -56,6 +57,31 @@
         </div>
       </div>
     </nav>
+    <style>
+          .gallery-img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 8px;
+          }
+          .caption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+          }
+          figure {
+            margin: 0;
+            text-align: center;
+          }
+        </style>
+        <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="close-button" onclick="closeLightbox(event)">&times;</span>
+
+        <div class="lightbox-center" onclick="event.stopPropagation()">
+          <img class="lightbox-content" id="lightbox-img">
+          <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+      </div>
     <div class="placeholder dark-white"></div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
@@ -67,8 +93,8 @@
      style="width: 300px; height: 300px; object-fit: cover; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Oxford vs ETF Sarajevo (Pt. 1)</em></h1>
-      <p class="lead mb-2 m-3">This post compares the structure and course content of Oxford and ETF. </p>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Oxford vs ETF Sarajevo</em></h1>
+      <p class="lead mb-2 m-3">This post compares the structure and course content of Oxford and ETF Sarajevo. </p>
       <p class="lead mb-2 m-3">  </p>
     </div>
   </div>
@@ -107,7 +133,7 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/etf/etf.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/etf/etf.jpg" alt="ETF Sarajevo main building" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               The main building of ETF Sarajevo
             </figcaption>
@@ -128,7 +154,7 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/oxford.jpg" alt="Oxford" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/oxford.jpg" alt="The Radcliffe Camera viewed from All Souls College, Oxford" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               The Radcliffe Camera viewed from All Souls College, Oxford
             </figcaption>
@@ -154,7 +180,7 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/pembroke_college.png" alt="Oxford" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/pembroke_college.png" alt="Pembroke College main quad" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               Pembroke College, Oxford
             </figcaption>
@@ -386,38 +412,35 @@
         <h4>Assessments</h4>
 
         <p>
-          At ETF (and other Bologna-based schooling systems) there is a great focus on <b>continuous assessment</b>: midterms, assignments, oral exams, 
-          labs, group work, and final exams 
-          which is not the case at Oxford. ETF makes it easier to get good grades by having multiple opportunities to take exams. 
-          By having a continuous assessment system there is less pressure on the finals. Importantly, there is less total knowledge 
-          to bring to exams as in most cases you only need to know the material from the semester you are in (not even the whole semester, but
-          rather the last few weeks as each semester has a midterm and a final exam which usually cover different material). 
+          At ETF (and in other Bologna-based systems), there is a strong emphasis on <b>continuous assessment</b>—including midterms, assignments, oral exams, labs, group work, and final exams—unlike at Oxford. 
+          ETF offers more opportunities to take exams, which can make it easier to achieve good grades.
+          Continuous assessment reduces the pressure on final exams. Importantly, exams typically cover only the material from the current semester—often just the final few weeks—so there's less total content to revise 
           </p><p>
-          At Oxford, the finals are the only exams and they are <b>cumulative</b>, meaning that you need to know the material from all 
-          three terms (you are assessed on the whole year at once). At the beginning of each semester we do have <em>"collections"</em> which are
-          mock exams that don't have any impact on our scores but are used to assess ones understanding of the material from the previous 
+          At Oxford, final exams are the only official assessments, and they are <b>cumulative</b>, meaning you're tested on material from all three terms. At the beginning of each semester we do have <em>"collections"</em>, which are mock exams that have no 
+          impact on official grades but are used to assess ones understanding of the material from the previous 
           term. These are typically easier than the finals and are not cumulative by design. Doing well on collections is not a 
           guarantee that you will do well on the finals and they have no impact on your final grade at all, as mentioned.
           </p>
           <p>
-          Interestingly, at Oxford, even the 5 (challenging) labs I had in Computer Science didn't contribute
-          to my final grade at all. Although, failing a lab meant failing the subject. 
+          Interestingly, even the five (challenging) Computer Science labs I completed at Oxford didn't contribute to my final grade. 
+          However, failing a lab meant failing the subject.
           </p>
           <p> 
-          For example, I was finally assessed on material from early October in late June (a <b>9-month gap</b>). This promotes a different
+          For example, I was assessed on material from early October in late June—a 9-month gap. This promotes a different
           way of studying and learning where you need to be able to recall the material from the whole year and not just the last semester.
-          This is one of the biggest difference between ETF and Oxford. 
+          This is one of the biggest differences between ETF and Oxford. 
           </p><p>
           At ETF, you can get away with forgetting the material from the first semester
-          and just focusing on the second semester. From first hand experience, I have felt how hard it was to recall material 
-          at ETF and how much 
-          more "unstable" my knowledge was compared to Oxford. 
+          and just focusing on the second semester. From firsthand experience, I found it much harder to recall material at ETF, 
+          and my knowledge felt more "unstable" compared to Oxford.
         </p>
+        <h5>Retaking exams</h5>
         <p>
-        Compared to ETF, <b>retaking exams at Oxford is possible but not nearly as easy.</b> The resits take place in September
-        and if you manage to fail any resit you fail the whole year. <b>In conclusion, passing exams at Oxford isn't 
+        While retaking exams at Oxford is possible, it is <b>significantly more difficult than at ETF</b>. The resits take place in September
+        and if you manage to fail any resit you fail the entire academic year. <b>In conclusion, passing exams at Oxford isn't 
           much harder than passing exams at ETF but getting good grades is much, much harder.</b>
         </p>
+        <h4>Exam conditions</h4>
         <p>
           <b>The exams at Oxford are much more formal than at ETF.</b> The exams are held in a large hall with hundreds of students
           and you are not allowed to bring any notes, books, electronics, etc. You are only allowed to bring
@@ -425,29 +448,28 @@
           allowed).
           <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/exam_school.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/exam_school.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
-              Oxford's Examination School - A historical landmark and exam venue
+              Oxford's Examination School — A historical landmark and exam venue
             </figcaption>
           </figure>
         </div> 
           </p><p>
-          The exams are usually 2-3 hours long and you are not allowed to leave the exam hall until the end of the exam except for ocassional 
+          Exams usually last 2-3 hours, and you're not permitted to leave the hall until the end of the exam except for ocassional 
           bathroom breaks if one needs them (although, to be honest, the exam is so stressful that I don't think (m)any people do this). 
           You are not allowed to talk to anyone while inside the exam hall. It feels much closer to the IMO than to ETF exams.
           </p><p>
           The exams are usually held in the morning. You are allowed to bring a water bottle but it must be transparent and you 
-          are not allowed to eat snacks during the exam.
+          are not allowed to eat any snacks during the exam.
           </p><p>
           You <b>must</b> wear a formal attire (suit, shirt, bowtie). Unfortunately, this means that even
-          when it's 30+ degrees Celsius outside, you must wear black dress shoes, dress trowsers, and wear or carry a suit with your 
+          when it's 30+ degrees Celsius outside, you must wear black dress shoes, dress trousers, and wear or carry a suit with your 
           "sub fusc" (gown)
-          to the exam venue (and the exam hall is 3 kilometers distance from where you live). Once you're seated, you can take off the suit 
-          and gown.
+          to the exam venue (and the exam hall is 3 kilometers distance from where you live). Once seated, you're allowed to remove your suit and gown.
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/before_exam_suits.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/before_exam_suits.jpg" alt="Flower tradition and suits before exam" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               Before my first exam at Oxford. Wearing a suit with a white flower on the left side of the suit. A white flower symbolises that you are 
               attending your first exam, a red flower symbolises that you are attending your last exam, and a pink flower symbolises that you are attending 
@@ -457,7 +479,7 @@
         </div>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/exam_waiting_room.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/exam_waiting_room.jpg" alt="Waiting to enter the exam" style="width: 100%; height: auto; max-width: 400px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               Exam waiting room at the Examination School. The room is filled with students waiting for their exams to start.
               The atmosphere is very tense and everyone is nervous. Lots of people are studying last-minute before the exam starts on their phones 
@@ -475,42 +497,40 @@
         My course at Oxford is <strong>definitely not</strong> an engineering course. The course I partially attended at ETF was called Computer Science 
         but felt closer to Computer Engineering or just Engineering during the first year. <b>The comparison is not perfect.</b>
         </p>
-        <p> ETF has more <em>breadth</em> (we went fast through lots of content superficially), and Oxford has more <em>depth</em> (we went through less content in the 
+        <p> ETF has more <em>breadth</em>—we covered a wide range of topics quickly but superficially, and Oxford has more <em>depth</em> (we went through less content in the 
           same amount of time but dug deep into important details). 
         </p>
-        <p>After finishing ETF, you would likely be a better software engineer than after finishing Oxford. After finishing Oxford, you would likely be 
+        <p>Graduating from ETF would likely make you a stronger software engineer than after finishing Oxford. After finishing Oxford, you would likely be 
           a better researcher/academic than after finishing ETF. Though, people that finish Oxford are usually very capable (can learn hard things 
           fast) and desirable in the job market.
         </p>
         <p>
         As one would expect, the first year of undergraduate study is not very specialized. It is essentially 
-        an introduction to the field. I held the belief that this would imply that some, if not most, 
-        of my knowledge from ETF would be useful at Oxford. <b>I was mostly wrong and I will go into this in 
-        detail below. </b>
+        an introduction to the field. I initially believed that much of my knowledge from ETF would carry over to Oxford. I was mostly wrong—and I'll explain why below.
         </p>
         <h5>Oxford</h5>
         <p class="blog-post-meta">
-        The subjects I took at Oxford were:
+        The subjects I studied at Oxford were:
         <br>
         <b>Mathematics department:</b> Analysis 1, 2 & 3, Linear Algebra 1 & 2, Probability, Groups and Group Actions
         <br>
         <b>Computer Science department:</b> Functional Programming (in Haskell), Imperative Programming (in Scala), 
-        Design and Analysis of Algorithms, and Continuous Maths. 
+        Design and Analysis of Algorithms, and Continuous Mathematics. 
         
         <div class="container py-4">
           <div class="row">
             <div class="col-md-6 text-center">
               <img src="/images/blog/oxford_vs_etf/oxford_2/CS_department.jpg"
                   alt="Oxford Computer Science Building"
-                  class="img-fluid rounded shadow"
-                  style="max-width: 50%;">
+                  style="max-width: 50%;"
+                  onclick="openLightbox(this)" class="img-fluid rounded shadow gallery-img">
               <p class="text-center mt-2">Computer Science Department at Oxford</p>
             </div>
             <div class="col-md-6 text-center">
               <img src="/images/blog/oxford_vs_etf/oxford_2/maths_insitute.jpg"
                   alt="Oxford Maths Building"
-                  class="img-fluid rounded shadow"
-                  style="max-width: 90%;">
+                  style="max-width: 90%;"
+                  onclick="openLightbox(this)" class="img-fluid rounded shadow gallery-img">
               <p class="text-center mt-2">The Andrew Wiles Building - Mathematics Department</p>
             </div>
           </div>
@@ -519,17 +539,15 @@
         <h5>ETF</h5>
 
         <p>
-        At ETF I took the following subjects: Mathematics I, Mathematics II, Linear Algebra, Physics I, 
+        At ETF I studied the following subjects: Mathematics I, Mathematics II, Linear Algebra, Physics I, 
         Introductory Programming in C, Programming Techniques in C++, 
         Mathematical Logic and Computability Theory, Probability and Statistics, and Operating Systems.
         </p>
         <p> 
-          Out of these, I really liked Mathematics II, Linear Algebra and Programming Techniques in C++. 
-          The Mathematics courses 
-          were very engineering-oriented, much closer to calculus than analysis. Linear Algebra was taught based on the MIT 
-          course 18.06 Linear Algebra which is a very good course. Programming Techniques in C++ was a very good and 
-          practical course that taught us how to program in C++ and how to use the STL. After finishing this course, I 
-          felt that I had gotten tangible programming knowledge and skills that I could apply in practice.
+          Out of all the courses, I especially enjoyed Mathematics II, Linear Algebra, and Programming Techniques in C++.
+The mathematics courses were very engineering-oriented—much closer to calculus than to pure analysis. Linear Algebra was based on MIT's 18.06 course, which I found excellent and well-structured.
+Programming Techniques in C++ was both practical and well-taught: it covered core C++ programming as well as use of the Standard Template Library (STL).
+By the end of the course, I felt I had gained tangible programming knowledge and skills that I could immediately apply in practice.
         </p>
         <br>
         <h3>Direct comparison</h3>
@@ -537,58 +555,54 @@
         <h4>What worked better at ETF?</h4>
         <h5>Not much collaboration at Oxford</h5>
         <p>
-          Had to learn to work alone at Oxford. At ETF, there was a "team spirit" where people would discuss progress on 
-          homework exercises, help each other, and work together on projects. At Oxford, this was not the case for me. Not a single
-          problem sheet question was attempted with anyone else. This is not to say that people at Oxford don't work together,
-          but rather that this kind of culture wasn't present at my college. At St John's, I had the impression that the most successful 
-          students worked together quite often and I really felt like I was missing out on something. This is something that I hope to
-          improve in the coming years, to go out of my way to work with others outside of my college.
+          At Oxford, I had to learn how to work independently. At ETF, there was a strong sense of team spirit—students often discussed homework problems, helped one another, and collaborated on projects. That wasn't my experience at Oxford. I didn't attempt a single problem sheet question with anyone else.
+This isn't to say that collaboration doesn't happen at Oxford, but rather that such a culture wasn't very present at my college. At St John's, I noticed that the most successful students tended to work together regularly, and I often felt I was missing out on something valuable.
+In the coming years, I hope to actively seek out more opportunities to collaborate—especially with students outside of my own college.
         </p>
 
         <h5>Programming wasn't that good at Oxford</h5>
         <h6>Imperative programming</h6>
         <p>
-          The C++ course taught by Željko Jurić at ETF was very good. The course Imperative Programming in Scala at Oxford 
-          was not nearly as good, mostly due to the fact that it used to be a course taught
-          in both Hilary and Trinity which is no longer the case. There used to be Imperative Programming 1,2, and 3 each taking 4 weeks to cover 
-          but now all three parts are squished into 8 weeks making the course feel rushed and not well thought out. Also, C++ at ETF required more 
-          hands-on work and was more practical than Scala at Oxford. This was impossible to achieve at Oxford due to the fact that the course is now only 8 weeks long 
-          and students have other very demanding courses to take at the same time. It would be impossible to implement the C++ homework exercises at Oxford.
-          This is a shame because I've heard first-hand from multiple people at Oxford that they don't feel that they put in enough time programming on a computer
-          during the degree.
+          The C++ programming course at ETF, taught by Željko Jurić, was highly practical and equipped me with tangible programming skills. In contrast, the Imperative Programming 
+          course in Scala at Oxford felt significantly less effective. This was largely due to structural changes in the curriculum: what used to be three 
+          separate modules—Imperative Programming 1, 2, and 3—spanning Hilary and Trinity terms, is now compressed into a single 8-week course.
+As a result, the content feels rushed and less thoughtfully delivered. Moreover, while the C++ course at ETF emphasized hands-on work and practical application, 
+the Scala course at Oxford did not provide the same level of engagement. This is understandable to some extent—Oxford terms are short, and students are juggling several 
+demanding subjects simultaneously. But the compressed structure makes it nearly impossible to implement substantial programming exercises like those we tackled in the C++ course.
+That's unfortunate, because I've spoken to several Oxford graduates who feel they didn't spend nearly enough time actually programming during their degree.
         </p>
         <p>
-          IP at Oxford was very focused on invariant, variants, pre/postconditions, datatype invariants, and other formal methods for making 
-          sure that the code is correct.
-          This is not a bad thing, but it was not very practical. I think that the course would be much better if it was taught in a more practical way, 
-          similar to the C++ course at ETF.
+          The Imperative Programming course at Oxford placed a strong emphasis on formal methods—such as invariants, variants, pre- and postconditions, and datatype 
+          invariants—to ensure code correctness. While this theoretical foundation is valuable, the course lacked a practical dimension. I believe the course would 
+          benefit greatly from a more hands-on approach, similar to the C++ course at ETF, which provided extensive programming practice. 
+          A more balanced integration of formal reasoning and real-world coding experience would make the course both more engaging and more effective, in my opinion.
         </p>
         <div class="px-5 pt-2 my-2 d-flex justify-content-center">
-          <figure style="margin: 0; text-align: center; max-width: 600px;">
+          <figure style="margin: 0; text-align: center; max-width:600px;">
             <img 
               src="/images/blog/oxford_vs_etf/oxford/invariants.png" 
               alt="Invariants" 
-              style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;"
+              style="max-width: 500px; height: auto; border-radius: 12px; display: block; margin: 0 auto;"
+              onclick="openLightbox(this)" class="gallery-img"
             >
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
-              Invariants, datatype invariants, pre/postconditions, abstraction functions - all critically important in Imperative Programming at Oxford.
+              Invariants, datatype invariants, pre/postconditions, abstraction functions—central to Imperative Programming at Oxford.
             </figcaption>
           </figure>
         </div>
         <h6>Functional programming</h6>
         <p>
           The Functional Programming course in Haskell was very <em>interesting...</em> Coming in with a significant amount of programming experience, I was
-          surprised that this course was the first programming (even computer science) course of the degree. I think they just assume that everyone 
-          has a solid programming experience in an imperative programming languages prior to starting their degree at Oxford. Some people said that they teach 
-          FP in the first term because most people usually don't have much 
-          experience in FP when starting their degree, thus leveling the playing field. 
+          surprised that this course was the first computer science course of the degree. It's rumoured that they assume everyone 
+          has solid programming experience in an imperative programming languages prior to starting their degree at Oxford. Some say that FP is taught 
+          first precisely because most students are unfamiliar with it, which helps level the playing field and keeps the term interesting for everyone.
           </p>
           <p>
-            This subject was hard. It felt like you should have read at least one book on Haskell before starting the course.
+            This course was hard. It felt like you were supposed to have read at least one book on Haskell before starting the course.
           </p>
         <p>
           The course was strange to say the least. I think learning functional programming 
-          before some C-adjacent language is a mistake.
+          before some C-like language is a mistake.
         </p>
         <div class="px-5 pt-2 my-2 d-flex justify-content-center">
           <figure style="margin: 0; text-align: center; max-width: 400px;">
@@ -596,6 +610,7 @@
               src="/images/blog/oxford_vs_etf/oxford/fold_fusion.png" 
               alt="Fold Fusion" 
               style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;"
+              onclick="openLightbox(this)" class="gallery-img"
             >
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               Three questions from a Functional Programming problem sheet. This strange equational reasoning was a huge part of the Functional Programming course.
@@ -628,15 +643,15 @@
             <div class="col-md-6 text-center">
               <img src="/images/blog/oxford_vs_etf/oxford/big picture.png"
                   alt="Strang Picture"
-                  class="img-fluid rounded shadow"
-                  style="max-width: 90%;">
+                  style="max-width: 90%;"
+                  onclick="openLightbox(this)" class="img-fluid rounded shadow gallery-img">
               <p class="text-center mt-2">Gilbert Strang's important subspaces</p>
             </div>
             <div class="col-md-6 text-center">
               <img src="/images/blog/oxford_vs_etf/oxford/LAG1.png"
-                  alt="Oxford Exam"
-                  class="img-fluid rounded shadow"
-                  style="max-width: 90%;">
+                  alt="Oxford exam question"
+                  style="max-width: 90%;"
+                  onclick="openLightbox(this)" class="img-fluid rounded shadow gallery-img">
               <p class="text-center mt-2">A question from an Oxford exam</p>
             </div>
           </div>
@@ -676,7 +691,8 @@
           In conclusion, I would spend less time in formal lectures or tutorials at Oxford than at ETF. I would use the extra 
           time to work by myself in my room.
         </p>
-        <h6>Tutorials</h6>
+        <h5>Tutorials</h5>
+        <h6>Tutorials at ETF</h6>
         <p> The tutorials I had at ETF were not effective. The issue, in my opinion, is that students don't try the problems by themselves 
           before the tutorial class where the tutor solves them. This means that the students don't learn how to solve the problems by themselves and
           ultimately creates a huge waste of time for 95% of students. It's usually not the students' fault that they don't try the problems by themselves 
@@ -689,6 +705,7 @@
           Usually what happens is that some students just copy down the tutor's solution in their notebooks and then go home and either forget about it or 
           waste time later trying to understand the solution (which again, is not as effective as trying to solve the problem by yourself).
         </p>
+        <h6>Tutorials at Oxford</h6>
         <p>
           At Oxford, the tutorials are much more effective. The tutors expect you to have tried the problems before the tutorial and they will 
           ask you to explain your solution to the problem. This means that you actually learn how to solve the problems by yourself and not just 
@@ -701,17 +718,18 @@
           willing to help you with any questions you have. This is something that I really like about the Oxford tutorials.
           Some tutors are very knowledgeable and passionate about the subject they teach. Some just want to get the job done.
         </p>
+        <h6>Tutorials at ETF vs Oxford</h6>
         <p>
           Having said this, I didn't find the Oxford tutorials immensely more helpful than the ETF tutorials. At ETF, I still had a direct 
           connection to the tutors. I would often ask questions and get help with the problems 
           I struggled with without hessitation. <b> In conclusion, ETF had tutorials where you'd come and listen to someone explain solutions to problems you've not attempted,
-            at Oxford you have tutorials where you come and listen to someone explain solutions to problem you've likely already solved.
+            at Oxford you have tutorials where you come and listen to someone explain solutions to problem you've likely already solved. I much prefer the latter.
           </b>
         </p>
         <h5>Selling point (digression)</h5>
-        <p> The tutorial system should be one of the main selling points of Oxford and Cambridge University. The tuition for international students for Maths and 
+        <p> The tutorial system is one of the main selling points of Oxbridge. The tuition for international students for Maths and 
           Computer Science is around £50,000 per year. Including living costs which amount to around £15,000 per year, the total cost of studying at Oxford
-          is around <b>£65,000</b> per year (amounting to around <b>£200,000</b> for a 3-year course when including inflation). This is a lot of money. 
+          is around <b>£65,000</b> per year (amounting to around <b>£200,000</b> for a 3-year course when including inflation).  
           I think that this is an insane amount of money to pay for a degree. 
         </p>
         <p>
@@ -724,54 +742,63 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/analysis_tutorial.jpg" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 500px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/analysis_tutorial.jpg" alt="Analysis tutorial" style="width: 100%; height: auto; max-width: 500px; border-radius: 12px;"
+            onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               An analysis tutorial at Oriel College. The tutor is explaining the solution to a problem sheet question to me and another student.
             </figcaption>
           </figure>
         </div>
         <h5>Getting the best grade requires at least 70% while at ETF it's 95%</h5>
-        <p>
-          Why is the bar so low for the best grade at Oxford? Because the exams contain very hard questions that require novel ideas to solve.
-          The questions are not designed to be solved by rote learning or by applying a formula. The Oxford exams go beyond just testing whether 
-          you grasp the material and can apply it to somewhat unfamiliar situations. They test your ability of coming up with new ideas and
-          applying them to the problems at hand. This is something that I really like about the Oxford exams. After finishing the first year, I feel like I have 
-          become smarter and more capable in most intelectual tasks and I attribute this feeling, for the most part, to this fact.
-          </p>
-          <p> At ETF, it was never about coming up with new ideas or applying them to the problems at hand. It was always about being mechanically 
-          good at applying the formulas and rote learning. My brain was mostly concerned about the amount of marks I would lose on an exam and not on 
-          how many marks I would get. At Oxford, the situation was totally different. The questions were so hard that I was never concerned about the number of marks I 
-          would lose, but rather how many marks I would get.
-          </p><p> Another thing I disliked about ETF was that there were a lot of bonus points that were given away for doing some extra work or for doing something 
-          extra (like filling out a survey even - something completely unrelated to the course). This meant that some people would have more than 100 points at the end 
-          of the year in that subject. At times I even felt professors being more charitable to better students and giving them more points than they probably deserved.
-          I felt this for some of my papers as well. This made the whole course feel less serious and more "chill" which, in my opinion, is not a good thing.
-          <br> For me, one of the key components for pushing my own boundaries at Oxford was the pressure and seriousness of the exams. <b>The fact that none of your work
-          throughout the year counts towards your final grade and that you have to do well on the finals to get a good grade is a great motivator.</b>
-          <br>
-        </p>
+        <p> Why is the bar so low for achieving the best grade at Oxford? Because the exams are exceptionally challenging and require genuinely novel ideas to solve. 
+          These questions aren’t designed to be tackled through rote learning or by applying memorized formulas. Instead, they go far beyond simply testing your 
+          understanding of the material or your ability to apply it to slightly unfamiliar situations—they assess your capacity to generate new ideas and apply 
+          them creatively to unfamiliar problems. </p> 
 
-        <h5>(shocking) Oxford is much more academically demanding</h5>
+        <p> This is one of the things I really appreciate about Oxford exams. After completing my first year, I 
+        genuinely feel like I’ve become smarter and more capable across a range of intellectual tasks—a transformation I attribute largely to the demands of 
+        the exam system. </p> 
+
+        <p> At ETF, by contrast, the emphasis was never on coming up with new ideas or applying them in novel ways. Success there was 
+        about being mechanically proficient at applying formulas and relying on rote memorization. During exams, my focus was often on how many marks I might 
+        lose, rather than how many I could earn. At Oxford, the mindset was completely different—the questions were so difficult that I found myself thinking 
+        only about how many marks I could gain, not about what I might lose. </p> 
+
+        <p> Another aspect of ETF that I found frustrating was the awarding of bonus 
+        points for unrelated or trivial tasks—like filling out a survey—which could push students’ scores beyond 100%. At times, I even sensed that some professors 
+        were more generous to stronger students, awarding them more points than their work likely deserved. I noticed this in some of my own results as well. 
+        This atmosphere made the course feel more relaxed and less academically serious, which I didn’t find motivating. </p>
+
+        <p> In contrast, one of the main forces driving me to push my limits at Oxford was the intensity and seriousness of the exam system. 
+        <strong>The fact that none of your coursework contributes to your final grade—and that your performance in the final exams determines your 
+        result entirely—was a powerful motivator.</strong> </p>
+
+        <h5>(Shocking) Oxford is much more academically demanding</h5>
+
         <blockquote class="blockquote">
           <p class="mb-0 small"><em>"Students should seek advice from their tutors if they find it impossible to meet their academic obligations without 
           spending significantly longer than 48 hours per week on academic study on a regular basis."</em></p>
         </blockquote>
+
         <p>
-          The amount of work I put in at Oxford was significantly higher than at ETF. I would estimate between 2 and 3 times more work per week.
-          Each week we had 4-5 problem sheets to do, each with 5-10 questions. The questions were usually quite challenging and 
-          required a lot of time to solve. The last one or two questions on each problem sheet were usually optional and harder than the rest but 
-          most "good" students would try to solve them anyway (either their own drive or social pressure from colleagues).
-          I would spend 4-6 hours per problem sheet, so in total around 20 hours per week just on problem sheets. 
-          We also had multiple labs throughout the year, 2 labs in Functional Programming, 2 in Imperative Programming and 1 in 
-          Design and Analysis of Algorithms. 
+        The academic workload at Oxford was significantly greater than what I experienced at ETF—easily two to three times more per week. 
+        Each week, we were given four to five problem sheets, each containing five to ten questions. The problems were often quite challenging and 
+        time-consuming, especially the final one or two questions on each sheet, which were usually optional and intended to stretch the strongest students. 
+        Nevertheless, most high-achieving students attempted them—driven either by personal ambition or subtle social pressure from peers.
         </p>
+
         <p>
-          This made me feel like I was constantly working on something and 
-          that I had little time to relax or do anything else. For the last 4 weeks of Hilary and Trinity I almost exclusively worked 
-          on university-related things throughout my time in Oxford. At ETF, I would start studying for some midterms a few days 
-          before the exam and I would still usually be top 3 in my cohort on
-          that exam and not lose many points (1-4 points). Of course, I had to put in some work during the semester, but it was 
-          not comparable.
+        I typically spent four to six hours on each problem sheet, totaling around 20 hours per week just on problem sets. 
+        In addition, we completed multiple lab assignments throughout the year: two for Functional Programming, two for Imperative Programming, 
+        and one for Design and Analysis of Algorithms.
+        </p>
+
+        <p>
+        This constant stream of academic work left me with relatively little time to relax or focus on non-university activities. 
+        For the last four weeks of both Hilary and Trinity terms, I spent nearly all of my time on university-related tasks. 
+        In contrast, at ETF I would often begin preparing for midterms just a few days before the exam, and still consistently ranked among 
+        the top three students in my cohort—typically losing only 1-3 points per exam. While ETF did require effort during the semester, the intensity 
+        and consistency of the workload were not remotely comparable to Oxford.
         </p>
 
         <h5>Oxford pushes your boundaries</h5>
@@ -783,7 +810,7 @@
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/probability_problem_sheet_question.png" alt="Problem sheet question" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/probability_problem_sheet_question.png" alt="Problem sheet question" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               This question was particularly interesting because it required you to think outside the box. It reminded me of some IMO problems.
             </figcaption>
@@ -792,14 +819,14 @@
         <p>
           As an example, take a look at this <a href="/images/blog/oxford_vs_etf/oxford/probabilityps5.pdf" target="_blank" rel="noopener noreferrer">
           probability problem sheet</a>. It's interesting because it has a lot of questions that aren't standard and require you to think (a bit) 
-          outside the box (especially the last question which took me more than an hour to fully solve).
+          outside the box (especially the last question which took me a long time to fully solve).
         </p>
         <p>
-          Analysis was hard and required a lot of creativity to solve certain questions. Here's a favourite question from some sheet:
+          Analysis was hard and required a lot of creativity for certain questions. Here's an example of a question that I found interesting:
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/analysis2_cool_question.png" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/analysis2_cool_question.png" alt="Analysis cool question" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
             </figcaption>
           </figure>
@@ -815,12 +842,12 @@
           the IOI (International Olympiad in Informatics) to which a proportion of the students in my year have gone and won medals.
         </p>
         <p>
-          Continuous Maths (a course that is a mix of Vector Calculus and Numerical Methods) was advanced for a first-year course. The
+          Continuous Maths, a course that is a mix of Vector Calculus and Numerical Methods, was pretty advanced for a first-year course. The
           <a href="/images/blog/oxford_vs_etf/oxford/cm-notes.pdf" target="_blank" rel="noopener noreferrer">lecture notes</a> were quite long and chock full of content.
         </p>
         <div class="px-5 pt-2 my-2 text-center">
           <figure style="margin: 0;">
-            <img src="/images/blog/oxford_vs_etf/oxford/extinction_probability_continuous_maths.png" alt="Oxford Exam School" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;">
+            <img src="/images/blog/oxford_vs_etf/oxford/extinction_probability_continuous_maths.png" alt="Continuous Mathematics Problem Sheet Question" style="width: 100%; height: auto; max-width: 600px; border-radius: 12px;" onclick="openLightbox(this)" class="gallery-img">
             <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d;">
               A cool question from a Continuous Maths problem sheet. It ties in well with what we learned in Probability and Analysis. 
             </figcaption>
@@ -838,7 +865,7 @@
           opportunities for promising researchers (some of my tutors got grants upwards of £400,000 to work on their research).
         </p>
         
-        <h2>Concluding remarks</h2>
+        <h3>Concluding remarks</h3>
         <p>
           If someone were to give me the opportunity to go back in time and immediately start my degree at Oxford after finishing high school, I would decline. 
           I am happy that I had the opportunity to study at ETF Sarajevo and that I was able to meet smart people in Sarajevo. I cherrish the memories I made there. 
@@ -874,7 +901,22 @@
     <script src="/blog.js"></script>
     <script src="/index.js"></script>
     <div class="spacer whiteblack"></div>
+    <script>
+      function openLightbox(imgElement) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const caption = document.getElementById("lightbox-caption");
 
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        caption.textContent = imgElement.alt;
+      }
+
+      function closeLightbox(event) {
+        if (event) event.stopPropagation(); // Prevent clicking "X" from bubbling up
+        document.getElementById("lightbox-modal").style.display = "none";
+      }
+    </script>
     <footer class="site-footer">
       <div class="container">
         <div class="row">
