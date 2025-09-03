@@ -1,141 +1,122 @@
 @import url(https://fonts.googleapis.com/css?family=Khula:700);
-  body {
+
+body {
   background: #ffffff;
-}  
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* whole screen */
+}
 
 .hidden {
-  opacity:0;
+  opacity: 0;
 }
 
 .console-container {
-  font-family:Khula;
-  font-size:4em;
-  text-align:left;
-  height:200px;
-  width:850px;
-  display:block;
-  position:up;
-  color:white;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:left;
+  font-family: Khula;
+  font-size: 4em;
+  text-align: left;
+  height: 200px;
+  width: 850px;
+  display: block;
+  position: relative;
+  color: white;
   padding-left: 5em;
 }
 .console-underscore {
-   display:inline-block;
-  position:relative;
-  top:-0.14em;
-  left:10px;
+  display: inline-block;
+  position: relative;
+  top: -0.14em;
+  left: 10px;
   color: #B6B6B6;
 }
-      /* SVG background image via https://haikei.app/ */
-    
-      .placeholder {
-        aspect-ratio: 960/60;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-    
-      .flip {
-        transform: rotate(180deg);
-      }
-      .roundy{
-        border-radius: 40% 70% 80% 30% / 40% 30% 70% 70%;
-      }
-      .bg-blobs{
-        background-image: url('/images/haikei/hiervin.svg');
-        background-repeat: no-repeat;
-      }
-      @media screne and (max-width: 1000px){
-        .bg-blobs{
-          background-image:none;
-        }
-      }
-      .lessroundy{
-        border-radius: 5%
-      }
-      .shady {
-      width: 250px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      
-      text-align: center;
-    }
-    .term{
-      font-family: 'Consolas';
-     
-    }
-    .thumbnail:hover {
-      position:relative;
-      top:-25px;
-      left:-35px;
-      width:500px;
-      height:auto;
-      display:block;
-      z-index:999;
-  }
 
-  /*Use this class when you want your content to be hidden*/
-.BeforeScroll
-{
-  height: 100px; /*Whatever you want*/
-  width: 100%; /*Whatever you want*/
-  display: none;
+/* SVG background image via https://haikei.app/ */
+.placeholder {
+  aspect-ratio: 960/60;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-
-
-/*Use this class when you want your content to be shown after some scroll*/
-.AfterScroll
-{
-  height: 100px; /*Whatever you want*/
-  width: 100%; /*Whatever you want*/
+.flip {
+  transform: rotate(180deg);
+}
+.roundy {
+  border-radius: 40% 70% 80% 30% / 40% 30% 70% 70%;
+}
+.lessroundy {
+  border-radius: 5%;
+}
+.shady {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.term {
+  font-family: 'Consolas';
+}
+.thumbnail:hover {
+  position: relative;
+  top: -25px;
+  left: -35px;
+  width: 500px;
+  height: auto;
   display: block;
+  z-index: 999;
 }
-.blurr{
+.blurr {
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
-.cursive{
-  font-family: S
+.cursive {
+  font-family: S;
+}
+
+/* Layout fix */
+nav.navbar {
+  flex: 0 0 auto; /* natural height */
 }
 
 .about-section {
-  width: 100vw;                       /* span full screen width */
-  min-height: calc(90vh);      /* full screen minus navbar height */
+  flex: 1 0 auto; /* take remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   padding: 2rem;
-  background-size: cover;              /* ensure bg-blobs fills */
+  background-size: cover;
   background-position: center;
-  gap: 2rem;                           /* space between image and text */
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
-/* .about-section .image-col,
-.about-section .text-col {
-  max-width: 500px;  
-  flex: 0 1 auto;   
-} */
+.bg-blobs {
+  background-image: url('/images/haikei/hiervin.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 992px) {
   .about-section {
-    flex-direction: column;           /* stack on small screens */
+    flex-direction: column;
     text-align: center;
   }
 }
 
-/* Mobile optimizations */
 @media (max-width: 768px) {
   .about-section {
-    
-    flex-direction: column !important; /* stack image + text */
+    flex-direction: column !important;
     text-align: left;
     padding: 1.5rem 1rem;
     gap: 1.25rem;
   }
 
   .about-section .text-col {
-    padding: 0; /* remove side padding */
+    padding: 0;
   }
 
   .about-section img {
@@ -145,7 +126,7 @@
   }
 
   .about-section h2 {
-    font-size: clamp(1.25rem, 4vw, 2rem);   /* ~24px */
+    font-size: clamp(1.25rem, 4vw, 2rem);
     line-height: 1.3;
   }
 
